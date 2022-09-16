@@ -1,0 +1,30 @@
+.remainPage {
+    width: 300px;
+    position: relative;
+}
+
+.mainPage {
+    width: 100%;
+    padding: 0px 12px 0px 12px;
+}
+
+.remainPage__wrap {
+    width: 100%;
+    
+}
+
+.remainPage__wrap img {
+    width: 70%;
+    height: auto;
+    margin: 32px 0px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.remain__title {
+    font-size: 16px;
+    color: rgb(47, 47, 214);
+    text-align: center;
+}
