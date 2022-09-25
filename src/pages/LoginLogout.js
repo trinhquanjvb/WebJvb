@@ -30,7 +30,7 @@ function LoginLogout() {
   const initToken= useSelector(store => store.reducerLogin.token)
 
   useMemo(() => {
-    // console.log(initToken)
+    // (initToken)
   }, [initToken])
 
   const info= {
@@ -71,36 +71,40 @@ function LoginLogout() {
           const action= submitForm(res.meta.token)
           dispatch(action)
 
+          const token= res.meta.token
+          localStorage.setItem('token', JSON.stringify(token))
           navigate('/HomePage')
         })
       }
     }
     
   return (
-    <div className={cx('login')}>
-      <form>
-        <h3 className={cx('login__title')}>BBS System</h3>
-
-        <input className={cx('login__email')} onChange={handleEmail} placeholder='E-email'  /> 
-        {errorEmail && <Error text= 'Email' />}
-        
-        <input className={cx('login__password')} onChange={handlePassword} placeholder='Mật khẩu' />
-        {errorEmail && <Error text= 'Password' />}
-        
-        <div className={cx('login__confirm')}>
-          <input id='save' type='checkbox' />
-          <label htmlFor='save' >Nhớ đăng nhập</label>
-
-          <span>Quên mật khẩu?</span>
-        </div>
-
-        <button
-          onClick={handleSubmit}
-          className={cx('login__btn')}
-        >
-          ĐĂNG NHẬP
-        </button>
-      </form>
+    <div className={cx('website')}>
+      <div className={cx('login')}>
+        <form>
+          <h3 className={cx('login__title')}>BBS System</h3>
+  
+          <input className={cx('login__email')} onChange={handleEmail} placeholder='E-email'  /> 
+          {errorEmail && <Error text= 'Email' />}
+          
+          <input className={cx('login__password')} onChange={handlePassword} placeholder='Mật khẩu' />
+          {errorEmail && <Error text= 'Password' />}
+          
+          <div className={cx('login__confirm')}>
+            <input id='save' type='checkbox' />
+            <label htmlFor='save' >Nhớ đăng nhập</label>
+  
+            <span>Quên mật khẩu?</span>
+          </div>
+  
+          <button
+            onClick={handleSubmit}
+            className={cx('login__btn')}
+          >
+            ĐĂNG NHẬP
+          </button>
+        </form>
+      </div>
     </div>
   )
 }

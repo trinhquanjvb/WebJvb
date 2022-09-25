@@ -28,3 +28,13 @@
     color: rgb(47, 47, 214);
     text-align: center;
 }
+
+.remain__list {
+    padding-left: 8px !important;
+}
+
+.remain__list--item.active {
+    color: var(--white-color) !important;
+    background-color: var(--primary-color) !important;
+    border-radius: 4px;
+}

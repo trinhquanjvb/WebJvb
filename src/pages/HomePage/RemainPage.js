@@ -25,7 +25,10 @@ import ScreenshotMonitorIcon from '@mui/icons-material/ScreenshotMonitor';
 const RemainPage = () => {
     const cx= classNames.bind(styles)
 
-    
+    const handleClick= (e) => {
+        console.log([e])
+    }
+
     return (
     <div className={cx('remainPage')}>
         <div className={cx('remainPage__wrap')}>
@@ -35,8 +38,12 @@ const RemainPage = () => {
 
         <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             <nav aria-label="main mailbox folders">
-                <List>
-                    <ListItem disablePadding>
+                <List
+                    className={cx('remain__list')}
+                >
+                    <ListItem disablePadding id='1' className={cx('remain__list--item', 'active')}
+                        onClick={handleClick}
+                    >
                         <ListItemButton>
                         <ListItemIcon>
                             <HomeIcon color='primary' />
@@ -45,7 +52,7 @@ const RemainPage = () => {
                         </ListItemButton>
                     </ListItem>
                      <Divider />
-                    <ListItem disablePadding>
+                    <ListItem disablePadding className={cx('remain__list--item')}> 
                         <ListItemButton>
                         <ListItemIcon>
                             <SportsScoreIcon sx={{color: 'pink'}} />
@@ -54,7 +61,7 @@ const RemainPage = () => {
                         </ListItemButton>
                     </ListItem>
                      <Divider />
-                    <ListItem disablePadding>
+                    <ListItem disablePadding className={cx('remain__list--item')}> 
                         <ListItemButton>
                         <ListItemIcon>
                             <TagFacesIcon sx={{color: '#F783AC'}} />
@@ -63,7 +70,7 @@ const RemainPage = () => {
                         </ListItemButton>
                     </ListItem>
                      <Divider />
-                    <ListItem disablePadding>
+                    <ListItem disablePadding className={cx('remain__list--item')}> 
                         <ListItemButton>
                         <ListItemIcon>
                             <CalendarMonthIcon color='secondary' />
@@ -72,7 +79,7 @@ const RemainPage = () => {
                         </ListItemButton>
                     </ListItem>
                      <Divider />
-                    <ListItem disablePadding>
+                    <ListItem disablePadding className={cx('remain__list--item')}> 
                         <ListItemButton>
                         <ListItemIcon>
                             <SavedSearchIcon color='primary' />
@@ -81,7 +88,7 @@ const RemainPage = () => {
                         </ListItemButton>
                     </ListItem>
                      <Divider />
-                    <ListItem disablePadding>
+                    <ListItem disablePadding className={cx('remain__list--item')}> 
                         <ListItemButton>
                         <ListItemIcon>
                             <AssignmentIndIcon color='secondary' />
@@ -90,7 +97,7 @@ const RemainPage = () => {
                         </ListItemButton>
                     </ListItem>
                      <Divider />
-                    <ListItem disablePadding>
+                    <ListItem disablePadding className={cx('remain__list--item')}> 
                         <ListItemButton>
                         <ListItemIcon>
                             <RuleFolderIcon sx={{color: '#F783AC'}} />
@@ -99,7 +106,7 @@ const RemainPage = () => {
                         </ListItemButton>
                     </ListItem>
                      <Divider />
-                    <ListItem disablePadding>
+                    <ListItem disablePadding className={cx('remain__list--item')}> 
                         <ListItemButton>
                         <ListItemIcon>
                             <RateReviewIcon color='action' />
@@ -108,7 +115,7 @@ const RemainPage = () => {
                         </ListItemButton>
                     </ListItem>
                      <Divider />
-                    <ListItem disablePadding>
+                    <ListItem disablePadding className={cx('remain__list--item')}> 
                         <ListItemButton>
                         <ListItemIcon>
                             <ScreenShareIcon sx={{color: '#FD7E14'}} />
@@ -117,7 +124,7 @@ const RemainPage = () => {
                         </ListItemButton>
                     </ListItem>
                      <Divider />
-                    <ListItem disablePadding>
+                    <ListItem disablePadding className={cx('remain__list--item')}> 
                         <ListItemButton>
                         <ListItemIcon>
                             <ScreenshotMonitorIcon color='success' />

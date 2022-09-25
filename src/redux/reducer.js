@@ -4,7 +4,6 @@ import { combineReducers } from "redux";
 const initialState= {
     email: '',
     password: '',
-    token: ''
 }
 
 const reducerLogin= (state= initialState, action) => {

@@ -15,8 +15,8 @@ const Events = ({element}) => {
         </div>
         <div className={cx('event__info')}>
             <h3>{element.title}</h3>
-            <p>Thời gian tổ chức <span>{element.time}</span></p>
-            <p>Địa điểm tổ chức<span>{element.location}</span></p>
+            <p>Thời gian tổ chức: <span>{element.time}</span></p>
+            <p>Địa điểm tổ chức: <span>{element.location}</span></p>
 
             <Divider sx={{margin: '24px 0px'}} />
 

@@ -8,13 +8,10 @@ import {Routes, Route} from "react-router-dom"
 
 const Website = () => {
   return (
-    <div>
-        
-        <Routes>
-            <Route path="/HomePage" element={<HomePage />} />
-            <Route path="/" element={<LoginLogout />} />
+        <Routes >
+          <Route path="/HomePage" element={<HomePage />} />
+          <Route path="/" element={<LoginLogout />} />
         </Routes>
-    </div>
 
   )
 }

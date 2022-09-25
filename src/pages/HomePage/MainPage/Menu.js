@@ -14,8 +14,9 @@ import axios from 'axios';
 
  function Menu ()  {
   const cx= classNames.bind(styles)
-  const token= useSelector(store => store.reducerLogin.token)
   const [data, setData] = useState({})
+  const newToken= localStorage.getItem('token')
+  const token= JSON.parse(newToken)
 
   const urlPersonal= `https://bbs-stg.hatoq.com/api/v1/user`
     useEffect( () => {

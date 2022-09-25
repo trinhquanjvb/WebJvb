@@ -14,9 +14,11 @@ const useFetch= (id, token) => {
         })
             .then(res => res.json())
             .then(res => {
-                console.log(res.data.event)
                 return  setData(res.data.event)
-            })}
+            })
+            .catch('Api khong hop le')
+            .finally('ket thuc')
+        }
 
         fetchData()
     }, [url])

@@ -8,9 +8,12 @@ import axios from "axios"
 function Projects() {
     const cx= classNames.bind(styles)
 
-    const token= useSelector(store => store.reducerLogin.token)
+    const newToken= localStorage.getItem('token')
+    const token= JSON.parse(newToken)
     const [data, setData]= useState([])
     const [newData, setNewData]= useState([])
+
+    // get 10 fisrt projects
     useEffect(() => {
 
         if(data.length > 0) {
@@ -27,6 +30,7 @@ function Projects() {
         }
     })
     .then(res => setData(res.data.data.projects))
+    .catch('Api ko hoat dong')
 
     return (
         <div className={cx('projects')}>

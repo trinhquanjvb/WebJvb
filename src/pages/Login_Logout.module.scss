@@ -1,3 +1,11 @@
+.website {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
 .login {
     color: var(--white-color);
     width: 540px;
@@ -5,7 +13,6 @@
     padding: 24px 32px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     border-radius: 4px;
-    transform: translate(127%, 50%);
 }
 
 .login__title {
@@ -25,6 +32,11 @@
     height: 40px;
     border-bottom: 1px solid #ccc;
     background-color: #e8f0fe;
+}
+
+.login__email:focus::placeholder,.login__password:focus::placeholder {
+    background-color: var(--white-color);
+    color: transparent;
 }
 
 .login__email {

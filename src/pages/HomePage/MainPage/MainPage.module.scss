@@ -6,6 +6,7 @@
     height: 75px;
     align-items: center;
     color: var(--white-color);
+    font-size: 14px;
 }
 
 .menu__list {
@@ -44,6 +45,14 @@
     background-color: #f5f5f5;
 }
 
+.arrow {
+    // fontSize: 64, position: 'relative', top: '31%' ,left: '-24px', color: 'primary',}} 
+    font-size: 64px !important;
+    position: relative;
+    top: 31%;
+    color: var(--primary-color);
+}
+
 .notice__wrap {
     flex: 3;
     border: 1px solid black;
@@ -66,46 +75,12 @@
 }
 
 .notice__introduce {
-
-}
-
-.btn {
-	border-radius: 4px;
-    border: none;
-    color: rgba(255, 255, 255, 1.0);
-    background-color: rgba(254, 44, 85, 1.0);
-    min-width: 164px;
-    min-height: 36px;
-    font-size: 18px;
-    line-height: 25px;
-    font-weight: 600;
-    font-family: SofiaPro,PingFangSC,sans-serif;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    padding: 6px 8px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    font-family: "IBM Plex Sans",ProximaNova,Arial,Tahoma,PingFangSC,sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
-    margin-left: 16px;
-    min-width: 100px;
+    display: block;
+  	display: -webkit-box;
+  	-webkit-line-clamp: 3;  /* số dòng hiển thị */
+  	-webkit-box-orient: vertical;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
 }
 
 .tippy {

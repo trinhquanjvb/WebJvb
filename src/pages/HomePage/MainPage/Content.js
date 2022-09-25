@@ -48,8 +48,9 @@ const Content= () => {
                 <div className='row'>
                     <div className='col-8'>
                     {fakeData.events.map((element, i) =>
-                    {console.log(element)
-                    return <Events element={element} />}
+                        {
+                            return <Events element={element} key={i}/>
+                    }
                     )}
                     <button className={cx('btn')}>show more</button>
                     <Rating />
