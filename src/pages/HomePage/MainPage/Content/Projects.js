@@ -14,6 +14,7 @@ function Projects() {
     const [newData, setNewData]= useState([])
 
     // get 10 fisrt projects
+    const url= `https://bbs-stg.hatoq.com/api/v1/projects`
     useEffect(() => {
 
         if(data.length > 0) {
@@ -21,16 +22,18 @@ function Projects() {
            
         }
     }, [data.length])
+    useEffect(() => {
+
+        axios.get(url, {
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+                    'Authorization': 'Bearer ' + token
+            }
+        })
+        .then(res => setData(res.data.data.projects))
+        .catch('Api ko hoat dong')
+    }, [])
     
-    const url= `https://bbs-stg.hatoq.com/api/v1/projects`
-    axios.get(url, {
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-                'Authorization': 'Bearer ' + token
-        }
-    })
-    .then(res => setData(res.data.data.projects))
-    .catch('Api ko hoat dong')
 
     return (
         <div className={cx('projects')}>

@@ -44,7 +44,7 @@ import axios from 'axios';
 
             <div className={cx('menu__personal')}>
                 
-                <Person sx={{fontSize: 50, color: '#8f8787',cursor: 'pointer'}} />
+                <Person sx={{fontSize: 50, color: '#8f8787',cursor: 'pointer', borderRadius: '40%'}} />
                 { data.name && <div className={cx('menu__personal--name')}>{data.name}</div>}
                 <ArrowDropDownIcon className={cx('arrowDown')} fontSize="small" />
                 <NotificationsIcon className={cx('bell')} fontSize='large' />
