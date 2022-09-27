@@ -27,11 +27,6 @@ function LoginLogout() {
 
   const email= useSelector(store => store.reducerLogin.email)
   const password= useSelector(store => store.reducerLogin.password)
-  const initToken= useSelector(store => store.reducerLogin.token)
-
-  useMemo(() => {
-    // (initToken)
-  }, [initToken])
 
   const info= {
     email,
@@ -47,12 +42,17 @@ function LoginLogout() {
     e.preventDefault()
 
     if(email === '' && password=== '') {
-      setErrorEmail(!errorEmail)
-      setErrorPassword(!errorPassword)
-    } else if(email === '') {
-      setErrorEmail(!errorEmail)
-    } else if (password === '') {
-      setErrorPassword(!errorPassword)
+      setErrorEmail(true)
+      setErrorPassword(true)
+    } else if(email === '' && password !== '') {
+      setErrorEmail(true)
+      setErrorPassword(false)
+    } else if (password === '' && email !== '') {
+      setErrorEmail(false)
+      setErrorPassword(true)
+    } else {
+      setErrorEmail(false)
+      setErrorPassword(false)
     }
 
     if(email === 'trinhnv@jvb-corp.com' && password === '12345678') {
@@ -85,10 +85,10 @@ function LoginLogout() {
           <h3 className={cx('login__title')}>BBS System</h3>
   
           <input className={cx('login__email')} onChange={handleEmail} placeholder='E-email'  /> 
-          {errorEmail && <Error text= 'Email' />}
+          {errorEmail && <Error text= 'Email' className={cx('error')} />}
           
           <input className={cx('login__password')} onChange={handlePassword} placeholder='Mật khẩu' />
-          {errorEmail && <Error text= 'Password' />}
+          {errorPassword && <Error text= 'Password' className={cx('error')} />}
           
           <div className={cx('login__confirm')}>
             <input id='save' type='checkbox' />

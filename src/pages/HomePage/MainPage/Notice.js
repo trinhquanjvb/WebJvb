@@ -11,9 +11,6 @@ import axios from 'axios'
 
 function Notice ()  {
   const cx= classNames.bind(styles)
-//   let [indexNotice, setIndexNotice] = useState(3)
-//   console.log(indexNotice, ++indexNotice)
-//   // const [nextIndex, setNextIndex] = useState(4)
   
   //   maintain
     const newToken= localStorage.getItem('token')
