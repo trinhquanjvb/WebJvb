@@ -5,7 +5,7 @@ import Error from '../components/LoginLogout/Error'
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {typeEmail, typePassword, submitForm} from '../redux/action'
-import {useState, useMemo} from 'react'
+import {useState} from 'react'
 import {useNavigate } from 'react-router-dom'
 import styles from './Login_Logout.module.scss'
 import classNames from 'classnames/bind'
@@ -15,7 +15,7 @@ function LoginLogout() {
   const cx= classNames.bind(styles)
   const dispatch= useDispatch()
   
-  // hande type
+  // handle type
   const handleEmail= (e) => {
     const action= typeEmail(e.target.value)
     dispatch(action)
@@ -25,17 +25,20 @@ function LoginLogout() {
     dispatch(action)
   }
 
-  const email= useSelector(store => store.reducerLogin.email)
-  const password= useSelector(store => store.reducerLogin.password)
-  const initToken= useSelector(store => store.reducerLogin.token)
-
-  useMemo(() => {
-    // (initToken)
-  }, [initToken])
+  let email= useSelector(store => store.reducerLogin.email)
+  let password= useSelector(store => store.reducerLogin.password)
+  const [localEmail, setLocalEmail]= useState(undefined)
+  const [localPassword, setLocalPassword]= useState(undefined)
 
   const info= {
     email,
     password,
+  }
+
+  // handle checked
+  const [checked, setChecked] = useState(false)
+  const handleChecked= (e) => {
+    setChecked(!checked)
   }
 
   // call api when click
@@ -47,12 +50,23 @@ function LoginLogout() {
     e.preventDefault()
 
     if(email === '' && password=== '') {
-      setErrorEmail(!errorEmail)
-      setErrorPassword(!errorPassword)
-    } else if(email === '') {
-      setErrorEmail(!errorEmail)
-    } else if (password === '') {
-      setErrorPassword(!errorPassword)
+      setErrorEmail(true)
+      setErrorPassword(true)
+    } else if(email === '' && password !== '') {
+      setErrorEmail(true)
+      setErrorPassword(false)
+    } else if (password === '' && email !== '') {
+      setErrorEmail(false)
+      setErrorPassword(true)
+    } else {
+      setErrorEmail(false)
+      setErrorPassword(false)
+    }
+    if( email === 'trinhnv@jvb-corp.com' && password === '123456789') {
+      localStorage.email= info.email
+      localStorage.password= info.password
+      setLocalEmail(localStorage.email)
+      setLocalPassword(localStorage.password)
     }
 
     if(email === 'trinhnv@jvb-corp.com' && password === '12345678') {
@@ -73,7 +87,10 @@ function LoginLogout() {
 
           const token= res.meta.token
           localStorage.setItem('token', JSON.stringify(token))
-          navigate('/HomePage')
+          setTimeout(() => {
+
+            navigate('/HomePage')
+          }, 1000)
         })
       }
     }
@@ -84,14 +101,14 @@ function LoginLogout() {
         <form>
           <h3 className={cx('login__title')}>BBS System</h3>
   
-          <input className={cx('login__email')} onChange={handleEmail} placeholder='E-email'  /> 
-          {errorEmail && <Error text= 'Email' />}
+          <input className={cx('login__email')} onChange={handleEmail} placeholder='E-email' value={localEmail || email} /> 
+          {errorEmail && <Error text= 'Email' className={cx('error')} />}
           
-          <input className={cx('login__password')} onChange={handlePassword} placeholder='Mật khẩu' />
-          {errorEmail && <Error text= 'Password' />}
+          <input className={cx('login__password')} onChange={handlePassword} placeholder='Mật khẩu' value={localPassword || password} />
+          {errorPassword && <Error text= 'Password' className={cx('error')} />}
           
           <div className={cx('login__confirm')}>
-            <input id='save' type='checkbox' />
+            <input id='save' type='checkbox' onChange={handleChecked} checked={checked}/>
             <label htmlFor='save' >Nhớ đăng nhập</label>
   
             <span>Quên mật khẩu?</span>
