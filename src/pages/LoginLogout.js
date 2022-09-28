@@ -2,7 +2,7 @@
 import Error from '../components/LoginLogout/Error'
 
 // library
-import React from 'react'
+import  { useEffect, useMemo } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {typeEmail, typePassword, submitForm} from '../redux/action'
 import {useState} from 'react'
@@ -27,8 +27,8 @@ function LoginLogout() {
 
   let email= useSelector(store => store.reducerLogin.email)
   let password= useSelector(store => store.reducerLogin.password)
-  const [localEmail, setLocalEmail]= useState(undefined)
-  const [localPassword, setLocalPassword]= useState(undefined)
+  const [localEmail, setLocalEmail]= useState(null)
+  const [localPassword, setLocalPassword]= useState(null)
 
   const info= {
     email,
@@ -45,9 +45,37 @@ function LoginLogout() {
   const [errorEmail, setErrorEmail] = useState(false)
   const [errorPassword, setErrorPassword] = useState(false)
   const navigate= useNavigate()
+
+  useMemo(() => {
+    if( checked === true  && email === 'trinhnv@jvb-corp.com' && password === '12345678') {
+      localStorage.setItem('info', JSON.stringify(info))
+      localStorage.setItem('isCheck', JSON.stringify(checked))
+      console.log(localStorage.getItem('isCheck'))
+    } else if (checked === false) {
+      setLocalEmail('')
+      setLocalPassword('')
+    }
+  }, [checked])
+
+  useMemo(() => {
+    const newInfo= localStorage.getItem('info')
+    const newIsChecked= localStorage.getItem('isCheck')
+    const parseInfo= JSON.parse(newInfo)
+    const parseIsChecked= JSON.parse(newIsChecked)
+
+      if( parseIsChecked=== true && parseInfo?.email !== '' && parseInfo?.password !== '' ) {
+        setLocalEmail(parseInfo?.email)
+        setLocalPassword(parseInfo?.password)
+        setChecked(parseIsChecked)
+      }
+    }, [])
   
   const handleSubmit=(e) => {
     e.preventDefault()
+    const newInfo= localStorage.getItem('info')
+    const newIsChecked= localStorage.getItem('isCheck')
+    const parseInfo= JSON.parse(newInfo)
+    const parseIsChecked= JSON.parse(newIsChecked)
 
     if(email === '' && password=== '') {
       setErrorEmail(true)
@@ -62,14 +90,9 @@ function LoginLogout() {
       setErrorEmail(false)
       setErrorPassword(false)
     }
-    if( email === 'trinhnv@jvb-corp.com' && password === '123456789') {
-      localStorage.email= info.email
-      localStorage.password= info.password
-      setLocalEmail(localStorage.email)
-      setLocalPassword(localStorage.password)
-    }
+    
 
-    if(email === 'trinhnv@jvb-corp.com' && password === '12345678') {
+    if(  email === 'trinhnv@jvb-corp.com' && password === '12345678') {
       const urlLogin= `https://bbs-stg.hatoq.com/api/v1/login`
       
        fetch(urlLogin, {
@@ -92,6 +115,13 @@ function LoginLogout() {
             navigate('/HomePage')
           }, 1000)
         })
+      } else if( parseIsChecked=== true && parseInfo?.email !== '' && parseInfo?.password !== '' ) {
+        setErrorEmail(false)
+        setErrorPassword(false)
+        setTimeout(() => {
+
+          navigate('/HomePage')
+        }, 1000)
       }
     }
     
@@ -104,7 +134,7 @@ function LoginLogout() {
           <input className={cx('login__email')} onChange={handleEmail} placeholder='E-email' value={localEmail || email} /> 
           {errorEmail && <Error text= 'Email' className={cx('error')} />}
           
-          <input className={cx('login__password')} onChange={handlePassword} placeholder='Mật khẩu' value={localPassword || password} />
+          <input className={cx('login__password')} onChange={handlePassword} placeholder='Mật khẩu' value={ localPassword || password} />
           {errorPassword && <Error text= 'Password' className={cx('error')} />}
           
           <div className={cx('login__confirm')}>
