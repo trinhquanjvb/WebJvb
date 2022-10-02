@@ -1,5 +1,4 @@
 import Content from './MainPage/Content'
-import Menu from './MainPage/Menu'
 import Notice from './MainPage/Notice'
 
 // library
@@ -11,7 +10,6 @@ function MainPage  ()  {
   const cx= classNames.bind(styles)
   return (
     <div className={cx('mainPage')}>
-      <Menu />
       <Notice />
       <Content />
     </div>
