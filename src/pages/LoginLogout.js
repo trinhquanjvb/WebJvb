@@ -1,11 +1,10 @@
 // file
 import Error from '../components/LoginLogout/Error'
+import { loginLogout } from '../redux/action'
 
 // library
-import  { useEffect, useMemo } from 'react'
-import {useSelector, useDispatch} from 'react-redux'
-import {typeEmail, typePassword, submitForm} from '../redux/action'
-import {useState} from 'react'
+
+import {useMemo, useState} from 'react'
 import {useNavigate } from 'react-router-dom'
 import styles from './Login_Logout.module.scss'
 import classNames from 'classnames/bind'
@@ -13,30 +12,25 @@ import classNames from 'classnames/bind'
 
 function LoginLogout() {
   const cx= classNames.bind(styles)
-  const dispatch= useDispatch()
+  const navigate= useNavigate()
   
   // handle type
+  const [email, setEmail]= useState('')
+  const [password, setPassword]= useState('')
   const handleEmail= (e) => {
-    const action= typeEmail(e.target.value)
-    dispatch(action)
+    setEmail(e.target.value)
   }
   const handlePassword= (e) => {
-    const action= typePassword(e.target.value)
-    dispatch(action)
-  }
-
-  let email= useSelector(store => store.reducerLogin.email)
-  let password= useSelector(store => store.reducerLogin.password)
-  const [localEmail, setLocalEmail]= useState(null)
-  const [localPassword, setLocalPassword]= useState(null)
-
-  const info= {
-    email,
-    password,
+   setPassword(e.target.value)
   }
 
   // handle checked
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(() => {
+    const localChecked= localStorage.getItem('info')
+    const checked= JSON.parse(localChecked)
+
+    return checked || false
+  })
   const handleChecked= (e) => {
     setChecked(!checked)
   }
@@ -44,56 +38,55 @@ function LoginLogout() {
   // call api when click
   const [errorEmail, setErrorEmail] = useState(false)
   const [errorPassword, setErrorPassword] = useState(false)
-  const navigate= useNavigate()
 
+  // remember me
   useMemo(() => {
-    if( checked === true  && email === 'trinhnv@jvb-corp.com' && password === '12345678') {
+    if(checked === true && email === 'trinhnv@jvb-corp.com' && password === '12345678') {
+      const info= {
+        email,
+        password,
+        checked,
+      }
       localStorage.setItem('info', JSON.stringify(info))
-      localStorage.setItem('isCheck', JSON.stringify(checked))
-      console.log(localStorage.getItem('isCheck'))
-    } else if (checked === false) {
-      setLocalEmail('')
-      setLocalPassword('')
+    }  if(checked === false) {
+      setEmail('')
+      setPassword('')
     }
   }, [checked])
 
   useMemo(() => {
-    const newInfo= localStorage.getItem('info')
-    const newIsChecked= localStorage.getItem('isCheck')
-    const parseInfo= JSON.parse(newInfo)
-    const parseIsChecked= JSON.parse(newIsChecked)
-
-      if( parseIsChecked=== true && parseInfo?.email !== '' && parseInfo?.password !== '' ) {
-        setLocalEmail(parseInfo?.email)
-        setLocalPassword(parseInfo?.password)
-        setChecked(parseIsChecked)
-      }
-    }, [])
-  
+    if(localStorage.getItem('info')) {
+      const localInfo= localStorage.getItem('info')
+      const info= JSON.parse(localInfo)
+      setEmail(info.email)
+      setPassword(info.password)
+      setChecked(info.checked)
+  }
+  }, [])
+ 
+  // submit  
   const handleSubmit=(e) => {
     e.preventDefault()
-    const newInfo= localStorage.getItem('info')
-    const newIsChecked= localStorage.getItem('isCheck')
-    const parseInfo= JSON.parse(newInfo)
-    const parseIsChecked= JSON.parse(newIsChecked)
-
-    if(email === '' && password=== '') {
-      setErrorEmail(true)
-      setErrorPassword(true)
-    } else if(email === '' && password !== '') {
-      setErrorEmail(true)
-      setErrorPassword(false)
-    } else if (password === '' && email !== '') {
-      setErrorEmail(false)
-      setErrorPassword(true)
-    } else {
-      setErrorEmail(false)
-      setErrorPassword(false)
-    }
-    
+   if( email === '' && password === '') {
+    setErrorEmail(true)
+    setErrorPassword(true)
+   } else if (email === '' && password !== '') {
+    setErrorEmail(true)
+    setErrorPassword(false)
+   } else if (email !== '' && password === '') {
+    setErrorEmail(false)
+    setErrorPassword(true)
+   } else {
+    setErrorEmail(false)
+    setErrorPassword(false)
+   }
 
     if(  email === 'trinhnv@jvb-corp.com' && password === '12345678') {
       const urlLogin= `https://bbs-stg.hatoq.com/api/v1/login`
+      const info= {
+        email,
+        password,
+      }
       
        fetch(urlLogin, {
         method: 'POST',
@@ -105,36 +98,27 @@ function LoginLogout() {
       })
         .then(res => res.json())
         .then(res => {
-          const action= submitForm(res.meta.token)
-          dispatch(action)
-
           const token= res.meta.token
           localStorage.setItem('token', JSON.stringify(token))
           setTimeout(() => {
 
-            navigate('/HomePage')
+            navigate('HomePage')
           }, 1000)
         })
-      } else if( parseIsChecked=== true && parseInfo?.email !== '' && parseInfo?.password !== '' ) {
-        setErrorEmail(false)
-        setErrorPassword(false)
-        setTimeout(() => {
-
-          navigate('/HomePage')
-        }, 1000)
       }
     }
-    
+
+  // render
   return (
     <div className={cx('website')}>
       <div className={cx('login')}>
         <form>
           <h3 className={cx('login__title')}>BBS System</h3>
   
-          <input className={cx('login__email')} onChange={handleEmail} placeholder='E-email' value={localEmail || email} /> 
+          <input className={cx('login__email')} onChange={handleEmail} placeholder='E-email' value={email} /> 
           {errorEmail && <Error text= 'Email' className={cx('error')} />}
           
-          <input className={cx('login__password')} onChange={handlePassword} placeholder='Mật khẩu' value={ localPassword || password} />
+          <input className={cx('login__password')} onChange={handlePassword} placeholder='Mật khẩu' value={password} />
           {errorPassword && <Error text= 'Password' className={cx('error')} />}
           
           <div className={cx('login__confirm')}>
