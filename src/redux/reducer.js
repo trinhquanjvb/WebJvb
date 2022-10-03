@@ -4,7 +4,10 @@ import { combineReducers } from "redux";
 const initialState= {
     email: '',
     password: '',
+    checked: false
 }
+
+
 
 const reducerLogin= (state= initialState, action) => {
     switch(action.type) {
@@ -22,6 +25,11 @@ const reducerLogin= (state= initialState, action) => {
             return {
                 ...state,
                 token: action.payload
+            }
+        case 'FORGOT_PASSWORD':
+            return {
+                ...state,
+                checked: action.payload
             }
         default:
             return state

@@ -47,13 +47,16 @@ function Notice ()  {
     const data= [useData, useDataNext]
 
   // onClick
-  const handleBack = () => {
+const handleBack = () => {
     setSuctract(prev => prev - 2)
 }
 const handleNext = () => {
-    //   setIndexNotice(prev => prev + 2)
-    // setNextIndex(indexNotice +3)
     setSuctract(prev => prev + 2)
+}
+
+const [srcImgDefault, setSrcImgDefault] = useState('')
+const handleSrcImgError= () => {
+    setSrcImgDefault('https://jvb-corp.com/uploads/news/year-end-party-2021/b%C3%ACa%20web%20yepxanh_thumb_s.png')
 }
   
   return (
@@ -71,8 +74,9 @@ const handleNext = () => {
                       <div className={cx('notice')}>
                           <div className={cx('notice__wrap')}>
                               <img
-                                  src={element.image_url} alt= 'no image'
+                                  src={srcImgDefault || element.image_url} alt= 'no image'
                                   className={cx('notice__img')}
+                                  onError= {handleSrcImgError}
                               />
                           </div>
                           <div className={cx('notice__wraps')}>

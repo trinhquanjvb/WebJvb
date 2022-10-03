@@ -12,3 +12,8 @@ export const submitForm= (payload) => ({
     type: 'SUBMIT_FORM',
     payload
 })
+
+export const forgotPassword= (payload) => ({
+    type: 'FORGOT_PASSWORD',
+    payload
+})
