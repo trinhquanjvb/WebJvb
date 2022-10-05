@@ -1,8 +1,8 @@
 // file
 // import styles from './PasswordReset.module.scss'
 import classNames from "classnames/bind";
-import Error from "../../components/LoginLogout/Error";
-import styles from "../../pages/Login_Logout.module.scss";
+import Error from "../../components/Notice/";
+import styles from "../../pages/Login_Logout/Login_Logout.module.scss";
 
 // library
 import { useState } from "react";

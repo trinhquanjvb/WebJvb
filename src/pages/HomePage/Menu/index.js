@@ -1,5 +1,5 @@
 // file
-import styles from './MainPage_RemainPage.module.scss'
+import styles from './Menu.module.scss'
 import classNames from 'classnames/bind'
 import { useEffect, useState } from 'react'
 

@@ -1,4 +1,4 @@
-import styles from './Error.module.scss'
+import styles from './Notice.module.scss'
 import classNames from 'classnames/bind'
 
 const Error= ({notice})  => {

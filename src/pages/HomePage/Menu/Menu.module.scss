@@ -1,52 +1,8 @@
-:root{
-    --height-menu: 74px;
-}
-.mainPage {
-    width: 100%;
-    padding: 0px 12px 0px 12px;
+:root {
+    --height-menu: 70px;
 }
 
-// component RemainPage
-.remainPage {
-    width: 250px;
-    position: relative;
-}
-
-
-.remainPage__wrap {
-    width: 100%;
-    cursor: pointer;
-}
-
-.remainPage__wrap img {
-    width: 70%;
-    height: auto;
-    margin: 32px 0px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-.remain__title {
-    font-size: 16px;
-    color: rgb(47, 47, 214);
-    text-align: center;
-}
-
-.remain__list {
-    padding-left: 8px !important;
-}
-
-.remain__list--item.active {
-    color: var(--white-color) !important;
-    background-color: var(--primary-color) !important;
-    border-radius: 4px;
-}
-
-// component Menu
 .menu {
-    
 }
 
 .menu__wrap {

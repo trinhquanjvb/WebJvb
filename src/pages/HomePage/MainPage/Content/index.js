@@ -1,12 +1,12 @@
 // file
-import Events from './Content/Events'
-import Rating from './Content/Rating'                       
-import Projects from './Content/Projects'
-import Punish from './Content/Punish'
+import Events from './Events'
+import Rating from './Rating'                       
+import Projects from './Projects'
+import Punish from './Punish'
 
 // library
 import classNames from 'classnames/bind'
-import styles from './MainPage.module.scss'
+import styles from './Content.module.scss'
 
 
 const fakeData= {
@@ -40,7 +40,6 @@ const fakeData= {
 
 const Content= () => {
     const cx= classNames.bind(styles)
-
 
     return (
         <div className={cx('content')}>

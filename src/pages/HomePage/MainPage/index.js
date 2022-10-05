@@ -1,9 +1,9 @@
-import Content from './MainPage/Content'
-import Notice from './MainPage/Notice'
+import Content from './Content'
+import Notice from './Notice'
 
 // library
 import React from 'react'
-import styles from './MainPage_RemainPage.module.scss'
+import styles from './MainPage.module.scss'
 import classNames from 'classnames/bind'
 
 function MainPage  ()  {
