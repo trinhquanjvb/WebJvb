@@ -8,8 +8,6 @@ import ListItemText from '@mui/material/ListItemText';
 import { Divider } from '@mui/material';
 import styles from './MainPage_RemainPage.module.scss'
 import classNames from 'classnames/bind'
-
-
 import HomeIcon from '@mui/icons-material/Home';
 import SportsScoreIcon from '@mui/icons-material/SportsScore';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
@@ -20,13 +18,14 @@ import RuleFolderIcon from '@mui/icons-material/RuleFolder';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import ScreenshotMonitorIcon from '@mui/icons-material/ScreenshotMonitor';
-
+import {Link,useNavigate} from "react-router-dom";
 
 const RemainPage = () => {
     const cx= classNames.bind(styles)
+    const navigate= useNavigate()
 
-    const handleClick= (e) => {
-        console.log([e])
+    const handleNavigate= (e) => {
+        // navigate('trang-chu')
     }
 
     return (
@@ -41,16 +40,20 @@ const RemainPage = () => {
                 <List
                     className={cx('remain__list')}
                 >
-                    <ListItem disablePadding id='1' className={cx('remain__list--item', 'active')}
-                        onClick={handleClick}
-                    >
-                        <ListItemButton>
-                        <ListItemIcon>
-                            <HomeIcon color='primary' />
-                        </ListItemIcon>
-                        <ListItemText primary="Trang Chủ" />
-                        </ListItemButton>
-                    </ListItem>
+                    <Link to={''}>
+                    	<ListItem 
+                    	    disablePadding
+                            className={cx('remain__list--item', 'active')}
+                            onClick={handleNavigate}
+                    	>
+                    	    <ListItemButton>
+                    	    <ListItemIcon>
+                    	        <HomeIcon color='primary' />
+                    	    </ListItemIcon>
+                    	    <ListItemText primary="Trang Chủ" />
+                    	    </ListItemButton>
+                    	</ListItem>
+                    </Link>
                      <Divider />
                     <ListItem disablePadding className={cx('remain__list--item')}> 
                         <ListItemButton>

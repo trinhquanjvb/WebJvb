@@ -15,23 +15,26 @@ function Projects() {
 
     // get 10 fisrt projects
     const url= `https://bbs-stg.hatoq.com/api/v1/projects`
-    useEffect(() => {
+    useEffect( () => {
 
         if(data.length > 0) {
             setNewData(data.slice(0, 10))
            
         }
     }, [data.length])
-    useEffect(() => {
+    useEffect(  () => {
+        const fetchData= async () => {
 
-        axios.get(url, {
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8',
-                    'Authorization': 'Bearer ' + token
-            }
-        })
-        .then(res => setData(res.data.data.projects))
-        .catch('Api ko hoat dong')
+            await axios.get(url, {
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8',
+                        'Authorization': 'Bearer ' + token
+                }
+            })
+            .then(res => setData(res.data.data.projects))
+        }
+        fetchData()
+            .catch(res => {return res})
     }, [])
     
 

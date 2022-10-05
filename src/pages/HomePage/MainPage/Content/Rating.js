@@ -7,7 +7,7 @@ function Rating() {
     
     return (
         <div className={cx('rating')}>
-            <h1 className={cx('rating__title')}>Góp Y Công Ty</h1>
+            <h1 className={cx('rating__title')}>Góp Ý Công Ty</h1>
             <input 
                 className={cx('rating__content')} 
                 placeholder= 'rất mong nhận được ý kiến đóng góp hoặc đề xuất của bạn đến công ty'

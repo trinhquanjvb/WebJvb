@@ -67,6 +67,7 @@
 .login__confirm span {
     color: #33b5e5;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .login__btn {
@@ -78,4 +79,46 @@
     color: white;
     font-size: 14px;
     font-weight: bold;
+}
+
+// component resetPassword
+
+
+.passwordReset__heading {
+    width: 100%;
+    height: 75px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.passwordReset__content {
+    flex: 1;
+}
+
+// .passwordReset__content--title {
+//     margin-bottom: 12px;
+//     color: black;
+// }
+
+.passwordReset__content--btn {
+   margin-top: 24px;
+}
+
+.login__notice {
+    display: flex;
+    margin-top: 24px;
+    justify-content: space-around;
+}
+
+.login__notice--content {
+    color: var(--primary-color);
+}
+
+.check__icon {
+    color: '#007bff' !important;
+    font-size: 32 !important;
+    transform: translate('-27px', '-9px') !important;
 }

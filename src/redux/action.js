@@ -17,3 +17,13 @@ export const forgotPassword= (payload) => ({
     type: 'FORGOT_PASSWORD',
     payload
 })
+
+export const loginLogout= (payload) => ({
+    type: 'LOGIN_LOGOUT',
+    payload
+})
+
+export const  loading= (payload) => ({
+    type: 'LOADING',
+    payload
+})

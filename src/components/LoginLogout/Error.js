@@ -1,12 +1,12 @@
 import styles from './Error.module.scss'
 import classNames from 'classnames/bind'
 
-const Error= ({text})  => {
+const Error= ({notice})  => {
     const cx= classNames.bind(styles)
 
     return (
         <div className={cx('error')}>
-            vui long nhap vao truong {`${text}`}       
+            {notice}      
         </div>
     )
 }
