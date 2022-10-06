@@ -1,27 +1,20 @@
 // file
-import store from './redux/store';
-import GlobalStyle from './components/GlobalStyle'
+import store from './redux/store'
 
 // library
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from 'react-redux';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
-
-
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-    <React.StrictMode>
-      <Provider store={store}>
-          <BrowserRouter>
-        <GlobalStyle>
-            <App />
-        </GlobalStyle>
-          </BrowserRouter>
-      </Provider>
-    </React.StrictMode>
-);
+   // <React.StrictMode>
+   <Provider store={store}>
+      <BrowserRouter>
+         <App />
+      </BrowserRouter>
+   </Provider>
+   // </React.StrictMode>
+)
