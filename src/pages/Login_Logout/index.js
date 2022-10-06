@@ -1,11 +1,11 @@
 // file
-import Error from '../components/LoginLogout/Error'
+import Error from '../../components/Notice'
+import styles from './Login_Logout.module.scss'
 
 // library
 
 import {useMemo, useState} from 'react'
 import {useNavigate } from 'react-router-dom'
-import styles from './Login_Logout.module.scss'
 import classNames from 'classnames/bind'
 
 

@@ -1,6 +1,6 @@
 // file
-import RemainPage from './HomePage/RemainPage'
-import Menu from './HomePage/Menu'
+import Sidebar from './Sidebar'
+import Menu from './Menu'
 
 // library
 import React from 'react'
@@ -10,11 +10,11 @@ import {Outlet} from "react-router-dom";
 
 
 
-const HomePage = ({children}) => {
+const HomePage = () => {
   const cx= classNames.bind(styles)
   return (
     <nav className={cx('HomePage')}>
-        <RemainPage />
+        <Sidebar />
         <div className={cx('HomePage__main')}>
           <Menu />
           <Outlet />

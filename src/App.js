@@ -1,9 +1,9 @@
-import Website from "./pages";
+import Router from "./router";
 
 function App() {
   return (
     <div className="App">
-      <Website />
+      <Router />
     </div>
   );
 }

@@ -1,3 +1,8 @@
+import classNames from 'classnames/bind'
+import {Link,useNavigate} from "react-router-dom";
+import styles from './Sidebar.module.scss'
+
+// material
 import React from 'react'
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
@@ -6,8 +11,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Divider } from '@mui/material';
-import styles from './MainPage_RemainPage.module.scss'
-import classNames from 'classnames/bind'
 import HomeIcon from '@mui/icons-material/Home';
 import SportsScoreIcon from '@mui/icons-material/SportsScore';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
@@ -18,9 +21,10 @@ import RuleFolderIcon from '@mui/icons-material/RuleFolder';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import ScreenshotMonitorIcon from '@mui/icons-material/ScreenshotMonitor';
-import {Link,useNavigate} from "react-router-dom";
 
-const RemainPage = () => {
+
+
+const Sidebar = () => {
     const cx= classNames.bind(styles)
     const navigate= useNavigate()
 
@@ -142,4 +146,4 @@ const RemainPage = () => {
   )
 }
 
-export default RemainPage
+export default Sidebar

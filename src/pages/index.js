@@ -1,36 +1,36 @@
-// import file
-import LoginLogout from "./LoginLogout";
-import HomePage from "./HomePage";
-import data from "../router/Homepage/route";
-import PasswordReset from "../router/PasswordReset/index"
+// // import file
+// import LoginLogout from "./Login_Logout";
+// import HomePage from "./HomePage";
+// import data from "../pages/HomePage/RemainPage";
+// import PasswordReset from "./PasswordReset"
 
-// import library
-import React from 'react'
-import {Routes, Route} from "react-router-dom"
+// // import library
+// import React from 'react'
+// import {Routes, Route} from "react-router-dom"
 
 
-const Website = () => {
+// const Website = () => {
   
-  return (
-        <Routes>
-          <Route path="/" element={<LoginLogout />} />
-          <Route path="trang-chu" element={<HomePage />} >
-            {data.map((element, i) => {
-              const Component= element.component
-              return (
-                <Route
-                  key={i}
-                  path={element.link}
-                  element={
-                      <Component/>
-                  }
-                />
-              )
-            })}
-          </Route>
-          <Route path="Password/Reset" element={<PasswordReset />} />
-        </Routes>
-  )
-}
+//   return (
+//         <Routes>
+//           <Route path="/" element={<LoginLogout />} />
+//           <Route path="/trang-chu" element={<HomePage />} >
+//             {data.map((element, i) => {
+//               const Component= element.component
+//               return (
+//                 <Route
+//                   key={i}
+//                   path={element.link}
+//                   element={
+//                       <Component/>
+//                   }
+//                 />
+//               )
+//             })}
+//           </Route>
+//           <Route path="Password/Reset" element={<PasswordReset />} />
+//         </Routes>
+//   )
+// }
 
-export default Website
+// export default Website

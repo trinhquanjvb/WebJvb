@@ -1,16 +1,16 @@
 // file
-import useFetch from '../../../components/useFetch'
+import useFetch from './useFetch'
+import styles from './Notice.module.scss'
 
 // library
 import axios from 'axios'
 import {  useState, useEffect } from 'react'
-import styles from './MainPage.module.scss'
 import classNames from 'classnames/bind'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import {useSelector, useDispatch} from 'react-redux'
+// import {useSelector, useDispatch} from 'react-redux'
 
 function Notice ()  {
     const cx= classNames.bind(styles)

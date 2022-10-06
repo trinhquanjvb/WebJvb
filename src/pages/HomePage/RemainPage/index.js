@@ -6,7 +6,7 @@ import WorkTime from './WorkTime'
 import MainPage from '../../../pages/HomePage/MainPage'
 
     const data= [
-        {component: MainPage, link: ''},
+        {component: MainPage , link: ''},
         {component: DayOffWork, link: 'gio-lam-viec'},
         {component: Punish, link: 'xin-phep'},
         {component: OffWork, link: 'ngay-phep'},
