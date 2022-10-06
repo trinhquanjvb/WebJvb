@@ -7,9 +7,9 @@ import { useEffect, useState } from 'react'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import { Person } from '@mui/icons-material'
-import 'tippy.js/dist/tippy.css'
 import axios from 'axios'
 import { Link, useLocation } from 'react-router-dom'
+import Tippy from '@tippyjs/react/headless'
 
 function Menu() {
    const cx = classNames.bind(styles)
@@ -19,6 +19,7 @@ function Menu() {
    const urlPersonal = `https://bbs-stg.hatoq.com/api/v1/user`
    const newToken = localStorage.getItem('token')
    const token = JSON.parse(newToken)
+   const [arr, setArr] = useState([])
 
    const menu = [
       { url: 'gio-lam-viec', value: 'Giờ làm việc' },
@@ -39,6 +40,11 @@ function Menu() {
             .then((res) => setData(res.data.data))
       }
       fetchData().catch((res) => res)
+   }, [])
+   useEffect(() => {
+      setTimeout(() => {
+         setArr([1, 2, 3])
+      }, 3000)
    }, [])
 
    // render
@@ -67,9 +73,23 @@ function Menu() {
                      borderRadius: '40%',
                   }}
                />
-               {data.name && (
-                  <div className={cx('menu__personal--name')}>{data.name}</div>
-               )}
+               <Tippy
+                  render={(attrs) => (
+                     <div className={cx('Tippy')} tabIndex="-1" {...attrs}>
+                        My tippy box
+                     </div>
+                  )}
+                  visible={true}
+                  // visible={arr.length > 0}
+                  // interactive={true}
+                  // className={cx('Tippy')}
+               >
+                  {data.name && (
+                     <div className={cx('menu__personal--name')}>
+                        {data.name}
+                     </div>
+                  )}
+               </Tippy>
                <ArrowDropDownIcon
                   className={cx('arrowDown')}
                   fontSize="small"

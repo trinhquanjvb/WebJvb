@@ -2,8 +2,7 @@
     --height-menu: 70px;
 }
 
-.menu {
-}
+.menu {}
 
 .menu__wrap {
     display: flex;
@@ -35,7 +34,7 @@ a.active {
 }
 
 // .menu__list  li  {
-    
+
 // }
 
 .menu__personal {
@@ -59,4 +58,10 @@ a.active {
 .bell {
     transform: translateY(6px);
     cursor: pointer;
+}
+
+// tippy
+.Tippy {
+    background-color: red;
+    min-width: 100px;
 }
