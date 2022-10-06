@@ -54,7 +54,9 @@ function Menu ()  {
                         <Link 
                             to={element.url}
                             key={++i}
-                            className={element.value === active ? cx('active') : '' }
+                            className={element.value === active ? cx('active') : '' , {
+                                active1: 'active1'
+                            }}
                             >
                             {element.value}
                         </Link>

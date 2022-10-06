@@ -1,13 +1,10 @@
 // file
-// import styles from './PasswordReset.module.scss'
 import classNames from "classnames/bind";
 import Error from "../../components/LoginLogout/Error";
 import styles from "../../pages/Login_Logout.module.scss";
 
 // library
 import { useState } from "react";
-// import { CheckCircleOutlineIcon } from '@mui/icons-material';
-// import CheckCircleOutlineIcon from '@mui/material/CheckCircleOutlineIcon';
 import CheckIcon from "@mui/icons-material/Check";
 import ListItemIcon from "@mui/material/ListItemIcon";
 
