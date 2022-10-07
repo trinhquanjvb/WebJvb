@@ -1,0 +1,23 @@
+.box {
+    position: absolute;
+    z-index: 1000;
+    min-width: fit-content;
+    padding: 0.5rem;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    top: 100%;
+}
+.box__content {
+    padding: 0.5rem;
+    margin-left: 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+    &:hover {
+        background-color: #4285f4;
+    }
+}

@@ -46,11 +46,14 @@ a.active {
     transform: translateY(16px);
     margin-left: 24px;
     cursor: pointer;
+    position: relative;
+    display: flex;
+    height:  fit-content;
 }
 
 .arrowDown {
     font-size: 24px;
-    transform: translateY(10px);
+    transform: translateY(-4px);
     margin-right: 24px;
     cursor: pointer;
 }
