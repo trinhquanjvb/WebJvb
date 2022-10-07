@@ -3,6 +3,7 @@ import styles from './Menu.module.scss'
 import classNames from 'classnames/bind'
 import { useEffect, useState } from 'react'
 import Logout from './Box/Logout'
+import data from './data'
 
 // library
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
@@ -22,13 +23,6 @@ function Menu() {
    const newToken = localStorage.getItem('token')
    const token = JSON.parse(newToken)
 
-   const menu = [
-      { url: 'gio-lam-viec', value: 'Giờ làm việc' },
-      { url: 'xin-phep', value: 'Xin phép' },
-      { url: 'ngay-phep', value: 'Ngày phép' },
-      { url: 'quy-jvb', value: 'Quỹ JVB' },
-      { url: 'bao-cao-cong-viec', value: 'Báo cáo công việc' },
-   ]
    const handleLogin = (e) => {
       e.stopPropagation()
       setIsLogin(!isLogin)
@@ -63,7 +57,7 @@ function Menu() {
       <div className={cx('menu')}>
          <div className={cx('menu__wrap')}>
             <ul className={cx('menu__list')}>
-               {menu?.map((element, i) => {
+               {data.menu?.map((element, i) => {
                   return (
                      <Link
                         to={element.url}
