@@ -28,14 +28,14 @@ const Sidebar = () => {
    return (
       <div className={cx('remainPage')}>
          <div className={cx('remainPage__wrap')}>
-            <img src="https://jvb-corp.com/img/logo.png" />
+            <img src='https://jvb-corp.com/img/logo.png' />
          </div>
          <h3 className={cx('remain__title')}>THỰC TẬP SINH</h3>
 
          <Box
             sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
          >
-            <nav aria-label="main mailbox folders">
+            <nav aria-label='main mailbox folders'>
                <List className={cx('remain__list')}>
                   <Link to={'/'}>
                      <ListItem
@@ -44,9 +44,9 @@ const Sidebar = () => {
                      >
                         <ListItemButton>
                            <ListItemIcon>
-                              <HomeIcon color="primary" />
+                              <HomeIcon color='primary' />
                            </ListItemIcon>
-                           <ListItemText primary="Trang Chủ" />
+                           <ListItemText primary='Trang Chủ' />
                         </ListItemButton>
                      </ListItem>
                   </Link>
@@ -56,7 +56,7 @@ const Sidebar = () => {
                         <ListItemIcon>
                            <SportsScoreIcon sx={{ color: 'pink' }} />
                         </ListItemIcon>
-                        <ListItemText primary="Thông báo từ JVB" />
+                        <ListItemText primary='Thông báo từ JVB' />
                      </ListItemButton>
                   </ListItem>
                   <Divider />
@@ -65,34 +65,34 @@ const Sidebar = () => {
                         <ListItemIcon>
                            <TagFacesIcon sx={{ color: '#F783AC' }} />
                         </ListItemIcon>
-                        <ListItemText primary="Tin tức, sự kiện" />
+                        <ListItemText primary='Tin tức, sự kiện' />
                      </ListItemButton>
                   </ListItem>
                   <Divider />
                   <ListItem disablePadding className={cx('remain__list--item')}>
                      <ListItemButton>
                         <ListItemIcon>
-                           <CalendarMonthIcon color="secondary" />
+                           <CalendarMonthIcon color='secondary' />
                         </ListItemIcon>
-                        <ListItemText primary="Đặt phòng họp" />
+                        <ListItemText primary='Đặt phòng họp' />
                      </ListItemButton>
                   </ListItem>
                   <Divider />
                   <ListItem disablePadding className={cx('remain__list--item')}>
                      <ListItemButton>
                         <ListItemIcon>
-                           <SavedSearchIcon color="primary" />
+                           <SavedSearchIcon color='primary' />
                         </ListItemIcon>
-                        <ListItemText primary="Danh sách dự án" />
+                        <ListItemText primary='Danh sách dự án' />
                      </ListItemButton>
                   </ListItem>
                   <Divider />
                   <ListItem disablePadding className={cx('remain__list--item')}>
                      <ListItemButton>
                         <ListItemIcon>
-                           <AssignmentIndIcon color="secondary" />
+                           <AssignmentIndIcon color='secondary' />
                         </ListItemIcon>
-                        <ListItemText primary="Danh sách nhân viên" />
+                        <ListItemText primary='Danh sách nhân viên' />
                      </ListItemButton>
                   </ListItem>
                   <Divider />
@@ -101,16 +101,16 @@ const Sidebar = () => {
                         <ListItemIcon>
                            <RuleFolderIcon sx={{ color: '#F783AC' }} />
                         </ListItemIcon>
-                        <ListItemText primary="Nội quy/ Quy định" />
+                        <ListItemText primary='Nội quy/ Quy định' />
                      </ListItemButton>
                   </ListItem>
                   <Divider />
                   <ListItem disablePadding className={cx('remain__list--item')}>
                      <ListItemButton>
                         <ListItemIcon>
-                           <RateReviewIcon color="action" />
+                           <RateReviewIcon color='action' />
                         </ListItemIcon>
-                        <ListItemText primary="Kinh nghiệm làm việc" />
+                        <ListItemText primary='Kinh nghiệm làm việc' />
                      </ListItemButton>
                   </ListItem>
                   <Divider />
@@ -119,16 +119,16 @@ const Sidebar = () => {
                         <ListItemIcon>
                            <ScreenShareIcon sx={{ color: '#FD7E14' }} />
                         </ListItemIcon>
-                        <ListItemText primary="Chia sẻ tài liệu" />
+                        <ListItemText primary='Chia sẻ tài liệu' />
                      </ListItemButton>
                   </ListItem>
                   <Divider />
                   <ListItem disablePadding className={cx('remain__list--item')}>
                      <ListItemButton>
                         <ListItemIcon>
-                           <ScreenshotMonitorIcon color="success" />
+                           <ScreenshotMonitorIcon color='success' />
                         </ListItemIcon>
-                        <ListItemText primary="Quản lý thiết bị" />
+                        <ListItemText primary='Quản lý thiết bị' />
                      </ListItemButton>
                   </ListItem>
                </List>

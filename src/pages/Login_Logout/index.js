@@ -1,15 +1,17 @@
 // file
 import Error from '../../components/Notice'
 import styles from './Login_Logout.module.scss'
-import PasswordReset from '../PasswordReset'
 
 // library
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useRef, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
+import axios from 'axios'
 
 function LoginLogout() {
    const cx = classNames.bind(styles)
+   const regexEmail = /(.jvb@gmail.com|@jvb-corp.com)$/
+   const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
    const navigate = useNavigate()
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
@@ -17,8 +19,13 @@ function LoginLogout() {
    const [errorPassword, setErrorPassword] = useState(false)
    const [noticeEmail, setNoticeEmail] = useState('')
    const [noticePassword, setNoticePassWord] = useState('')
-   const regexEmail = /(.jvb@gmail.com|@jvb-corp.com)$/
-   const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+   const [checked, setChecked] = useState(() => {
+      const localChecked = localStorage.getItem('info')
+      const checked = JSON.parse(localChecked)
+
+      return checked || false
+   })
+   const refEmail = useRef()
 
    const handleEmail = (e) => {
       setEmail(e.target.value)
@@ -27,12 +34,6 @@ function LoginLogout() {
       setPassword(e.target.value)
    }
 
-   const [checked, setChecked] = useState(() => {
-      const localChecked = localStorage.getItem('info')
-      const checked = JSON.parse(localChecked)
-
-      return checked || false
-   })
    const handleChecked = (e) => {
       setChecked(!checked)
    }
@@ -52,12 +53,12 @@ function LoginLogout() {
          localStorage.setItem('info', JSON.stringify(info))
       }
       if (checked === false) {
-         setEmail('')
-         setPassword('')
+         localStorage.clear()
       }
    }, [checked])
 
-   useMemo(() => {
+   useEffect(() => {
+      refEmail.current.focus()
       if (localStorage.getItem('info')) {
          const localInfo = localStorage.getItem('info')
          const info = JSON.parse(localInfo)
@@ -100,21 +101,17 @@ function LoginLogout() {
                   email,
                   password,
                }
-               await fetch(urlLogin, {
-                  method: 'POST',
-                  headers: {
-                     Accept: 'application/json',
-                     'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify(info),
-               })
-                  .then((res) => res.json())
+
+               await axios
+                  .post(urlLogin, info)
                   .then((res) => {
-                     const token = res.meta.token
+                     const token = res.data.meta.token
                      localStorage.setItem('token', JSON.stringify(token))
 
                      navigate('/')
                   })
+                  .catch((res) => res)
+               // }
             }
          }
       }
@@ -130,8 +127,9 @@ function LoginLogout() {
                <input
                   className={cx('login__email')}
                   onChange={handleEmail}
-                  placeholder="E-email"
+                  placeholder='E-email'
                   value={email}
+                  ref={refEmail}
                />
                {errorEmail && (
                   <Error notice={noticeEmail} className={cx('error')} />
@@ -140,9 +138,9 @@ function LoginLogout() {
                <input
                   className={cx('login__password')}
                   onChange={handlePassword}
-                  placeholder="Mật khẩu"
+                  placeholder='Mật khẩu'
                   value={password}
-                  type="password"
+                  type='password'
                />
                {errorPassword && (
                   <Error notice={noticePassword} className={cx('error')} />
@@ -150,14 +148,14 @@ function LoginLogout() {
 
                <div className={cx('login__confirm')}>
                   <input
-                     id="save"
-                     type="checkbox"
+                     id='save'
+                     type='checkbox'
                      onChange={handleChecked}
                      checked={checked}
                   />
-                  <label htmlFor="save">Nhớ đăng nhập</label>
+                  <label htmlFor='save'>Nhớ đăng nhập</label>
 
-                  <Link to="/password/reset">Quên mật khẩu?</Link>
+                  <Link to='/password/reset'>Quên mật khẩu?</Link>
                </div>
 
                <button onClick={handleSubmit} className={cx('login__btn')}>

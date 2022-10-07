@@ -11,13 +11,37 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
     top: 100%;
+    animation: fade 0.3s ease;
 }
+
 .box__content {
     padding: 0.5rem;
     margin-left: 0;
     font-size: 0.9rem;
     font-weight: 300;
+
     &:hover {
         background-color: #4285f4;
+    }
+}
+
+a.box__content {
+    display: block;
+    color: black;
+
+    &:hover {
+        background-color: #4285f4;
+    }
+}
+
+@keyframes fade {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
     }
 }

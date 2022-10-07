@@ -48,7 +48,7 @@ a.active {
     cursor: pointer;
     position: relative;
     display: flex;
-    height:  fit-content;
+    height: fit-content;
 }
 
 .arrowDown {
@@ -61,10 +61,10 @@ a.active {
 .bell {
     transform: translateY(6px);
     cursor: pointer;
+    font-size: 24px;
 }
 
-// tippy
-.Tippy {
-    background-color: red;
-    min-width: 100px;
+.bagde {
+    // color: red;
+    transform: translateY(2px);
 }
