@@ -13,6 +13,9 @@
     border-radius: 0.25rem;
     top: 100%;
     animation: fade 0.3s ease;
+    height: fit-content;
+    bottom: 0;
+    right: 0;
 }
 
 // comp Box
@@ -49,11 +52,16 @@ a.box__content {
 }
 
 // comp Notice
-.box.box__notice {
+.box.box2 {
+    max-width: 380px;
+}
+.notice {
     display: flex;
 }
 
-.box__img {}
+.box__img {
+    padding: 2px 6px;
+}
 
 .box__img img {
     width: 50px;
@@ -70,4 +78,6 @@ a.box__content {
 
 .box__main--content {}
 
-.box__main--title {}
+.box__main--title {
+    display: flex;
+}

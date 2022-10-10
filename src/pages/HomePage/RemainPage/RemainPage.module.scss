@@ -1,0 +1,124 @@
+:root {
+    --height-btn: 46px;
+}
+
+.worktime {
+    background-color: var(--white-color);
+    padding: 24px 12px 0px 12px;
+    
+}
+
+.worktime__heading {
+    background-color: #e9ecef;
+    padding: 20px 16px;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.worktime__heading--icon {
+    color: var(--primary-color);
+}
+
+.worktime__heading--color {
+    display: flex;
+}
+
+.worktime__heading--color div {
+    color: var(--primary-color);
+}
+
+.worktime__select {
+    margin-top: 52px;
+    margin-bottom: 32px;
+}
+
+.worktime__select--year {
+    padding: 10px 0px 10px 10px;
+    margin-right: 28px;
+    
+}
+
+.worktime__select--month {
+    padding: 10px 12px 10px 10px;
+    
+}
+.worktime__select--year,.worktime__select--month {
+    width: 118px;
+    height: var(--height-btn);
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.worktime__info {
+
+}
+
+.worktime__info--warn,
+.worktime__info--primary,
+.worktime__info--success {
+    color: var(--white-color);
+    text-transform: capitalize;
+    min-width: 150px;
+    height: var(--height-btn);
+}
+
+.worktime__info--warn {
+    background-color: #ff3547;
+}
+
+.worktime__info--primary {
+    background-color: #4285f4;
+    margin-left: 24px;
+
+}
+
+.worktime__info--success {
+    background-color: #00c851;
+    margin-left: 24px;
+}
+
+
+.worktime__calender {
+    width: 100%;
+}
+
+.worktime__calender--day {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.worktime__calender--day .day,.worktime__calender--day .date {
+    font-size: 24px;
+    font-weight: bolder;
+    flex: 0 0 14%;
+    max-width: 14%;
+    background-color: #eeeeee;
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 4px;
+}
+
+.worktime__calender--day .day {
+    padding: 15px 0px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#active {
+    background-color: #222222;
+    color: var(--white-color);
+}
+
+.worktime__calender--day .date.disable {
+    background-color: #f8f8f8;
+    opacity: 0.5;
+}
+
+.worktime__calender--day .date.rest {
+    color: red;
+}
+
+.day + .day, .date + .date {
+}
