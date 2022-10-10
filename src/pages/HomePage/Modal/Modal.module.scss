@@ -1,0 +1,39 @@
+.modal {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: rgba($color: #000000, $alpha: 0.3);
+   z-index: 10000;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+}
+
+.modal_container {
+   width: 700px;
+   height: 600px;
+   border-radius: 4px;
+   display: flex;
+   flex-direction: column;
+   padding: 32px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal__heading {
+   font-size: 24px;
+   color: black;
+}
+
+.modal__radio {}
+
+.modal__select {}
+
+.modal__time {}
+
+.modal__rate {}
+
+.modal__btn {}

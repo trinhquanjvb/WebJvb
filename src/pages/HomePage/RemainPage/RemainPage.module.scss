@@ -5,7 +5,7 @@
 .worktime {
     background-color: var(--white-color);
     padding: 24px 12px 0px 12px;
-    
+
 }
 
 .worktime__heading {
@@ -36,23 +36,23 @@
 .worktime__select--year {
     padding: 10px 0px 10px 10px;
     margin-right: 28px;
-    
+
 }
 
 .worktime__select--month {
     padding: 10px 12px 10px 10px;
-    
+
 }
-.worktime__select--year,.worktime__select--month {
+
+.worktime__select--year,
+.worktime__select--month {
     width: 118px;
     height: var(--height-btn);
     border: 1px solid #ced4da;
     border-radius: 4px;
 }
 
-.worktime__info {
-
-}
+.worktime__info {}
 
 .worktime__info--warn,
 .worktime__info--primary,
@@ -89,7 +89,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.worktime__calender--day .day,.worktime__calender--day .date {
+
+.worktime__calender--day .day,
+.worktime__calender--day .date {
     font-size: 24px;
     font-weight: bolder;
     flex: 0 0 14%;
@@ -98,6 +100,7 @@
     text-align: center;
     padding: 40px 0;
     margin-bottom: 4px;
+    cursor: pointer;
 }
 
 .worktime__calender--day .day {
@@ -114,11 +117,12 @@
 .worktime__calender--day .date.disable {
     background-color: #f8f8f8;
     opacity: 0.5;
+    pointer-events: none;
 }
 
 .worktime__calender--day .date.rest {
     color: red;
 }
 
-.day + .day, .date + .date {
-}
+.day+.day,
+.date+.date {}

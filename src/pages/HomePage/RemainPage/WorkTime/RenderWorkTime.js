@@ -5,13 +5,18 @@ import data from './dbDate'
 import classNames from 'classnames/bind'
 
 const RenderWorkTime = (obj) => {
-	const cx = classNames.bind(styles)
-	// render
-	return obj.index.map((data, i) => (
-		<span key={i} className={cx('date', [data.disable], [data.rest])}>
-			{data.date}
-		</span>
-	))
+   const cx = classNames.bind(styles)
+
+   // render
+   return obj.index.map((data, i) => (
+      <span
+         key={i}
+         onClick={obj.onClick}
+         className={cx('date', [data.disable], [data.rest])}
+      >
+         {data.date}
+      </span>
+   ))
 }
 
 export default RenderWorkTime
