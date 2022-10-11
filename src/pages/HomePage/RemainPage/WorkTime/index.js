@@ -1,8 +1,8 @@
 import React from 'react'
 import RenderWorkTime from './RenderWorkTime'
 import styles from '.././RemainPage.module.scss'
-import data from './dbDate'import {useSelector, useDispatch} from 'react-redux'
-
+import data from './dbDate'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { useState } from 'react'
 import classNames from 'classnames/bind'
@@ -12,10 +12,10 @@ const WorkTime = () => {
    const [info, setInfo] = useState([])
    const [index, setIndex] = useState(() => data[9].month)
    const isShowModal = useSelector((store) => store.reducerHomePage.isShowModal)
-   const dispatch= useDispatch()
+   const dispatch = useDispatch()
    // const handleMonth = (e) => {
    // 	const currentMonthStr = e.target.value
-   // 	const currentMonth = ~~currentMonthStr
+   // 	const currentMonth = ~~currentMonthStrgit
    // 	console.log(currentMonth)
 
    // 	function indexMonth() {
@@ -69,7 +69,6 @@ const WorkTime = () => {
 
    const handleClick = (e) => {
       console.log(e.target.value)
-      const action= 
    }
 
    return (
