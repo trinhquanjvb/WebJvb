@@ -13,9 +13,6 @@ import { Person } from '@mui/icons-material'
 import axios from 'axios'
 import { Link, useLocation } from 'react-router-dom'
 import Badge from '@mui/material/Badge'
-import StickyNote2Icon from '@mui/icons-material/StickyNote2'
-import AnchorIcon from '@mui/icons-material/Anchor'
-// import Lollipop from '@mui/icons-material/Lollipop'
 
 function Menu() {
    const cx = classNames.bind(styles)
@@ -74,14 +71,16 @@ function Menu() {
                })}
             </ul>
             <div className={cx('menu__personal')}>
-               <Person
-                  sx={{
-                     fontSize: 50,
-                     color: '#8f8787',
-                     cursor: 'pointer',
-                     borderRadius: '40%',
-                  }}
-               />
+               <div className={cx('menu__personal--avata')}>
+                  <Person
+                     sx={{
+                        fontSize: 50,
+                        color: '#8f8787',
+                        cursor: 'pointer',
+                        borderRadius: '40%',
+                     }}
+                  />
+               </div>
 
                <div
                   className={cx('menu__personal--name')}
@@ -96,7 +95,6 @@ function Menu() {
                </div>
                <Badge badgeContent={3} color='error' className={cx('bagde')}>
                   <NotificationsIcon className={cx('bell')}></NotificationsIcon>
-                  <StickyNote2Icon />
                   {/* <Notice /> */}
                </Badge>
             </div>

@@ -1,0 +1,15 @@
+.icon i {
+   font-size: 16px;
+   color: currentColor;
+   position: absolute;
+   top: 8px;
+   right: 8px;
+}
+
+.icon__tippy {
+   background-color: black;
+   color: var(--white-color);
+   padding: 4px 8px;
+   border-radius: 4px;
+   text-align: center;
+}

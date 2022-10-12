@@ -1,8 +1,13 @@
-:root {
-    --height-menu: 70px;
-}
+// :root {
+//     --height-menu: 70px;
+// }
 
-.menu {}
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: calc(var(--width-sidebar));
+}
 
 .menu__wrap {
     display: flex;
@@ -33,13 +38,15 @@ a.active {
     font-weight: bolder;
 }
 
-// .menu__list  li  {
-
-// }
-
 .menu__personal {
     display: flex;
     margin-right: 36px;
+}
+
+.menu__personal--avata {
+    // border-bottom-left-radius: 40%;
+    // border-bottom-right-radius: 40%;
+    border-radius: 40px;
 }
 
 .menu__personal--name {

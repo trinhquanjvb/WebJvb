@@ -1,6 +1,9 @@
 .remainPage {
-    width: 250px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: calc(100vw - var(--width-sidebar));
 }
 
 
@@ -27,6 +30,7 @@
 
 .remain__list {
     padding-left: 8px !important;
+    padding-right: 8px !important;
 }
 
 .remain__list--item.active {
