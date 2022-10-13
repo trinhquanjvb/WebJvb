@@ -5,7 +5,6 @@
 }
 
 .wrap_img {
-    object-fit: fill;
     flex: 4;
     border-radius: 16px;
     overflow: hidden;
@@ -38,6 +37,12 @@
 .event__info h4 {
     font-size: 15px;
     margin-bottom: 24px;
+}
+
+@media (max-width:668px) {
+    .events {
+        display: block;
+    }
 }
 
 // component rating

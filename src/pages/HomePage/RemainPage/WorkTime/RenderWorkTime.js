@@ -1,4 +1,4 @@
-import styles from '.././RemainPage.module.scss'
+import styles from './WorkTime.module.scss'
 import Icon from './Icon'
 
 import classNames from 'classnames/bind'

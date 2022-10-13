@@ -1,12 +1,9 @@
-// :root {
-//     --height-menu: 70px;
-// }
-
 .menu {
     position: fixed;
     top: 0;
     right: 0;
-    left: calc(var(--width-sidebar));
+    left: calc(var(--width-sidebar) - 16px);
+    z-index: 1000000;
 }
 
 .menu__wrap {

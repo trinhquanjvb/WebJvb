@@ -45,16 +45,16 @@ const Content = () => {
 
    return (
       <div className={cx('content')}>
-         <div className="container-fuild">
-            <div className="row">
-               <div className="col-8">
+         <div className='container-fuild'>
+            <div className='row'>
+               <div className='col-lg-8 col-sm-12 gx-0'>
                   {fakeData.events.map((element, i) => {
                      return <Events element={element} key={i} />
                   })}
                   <button className={cx('btn')}>show more</button>
                   <Rating />
                </div>
-               <div className="col-4">
+               <div className='col-lg-4 col-sm-12'>
                   <Punish />
                   <Projects />
                </div>

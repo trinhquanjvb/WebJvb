@@ -4,6 +4,7 @@
     bottom: 0;
     left: 0;
     right: calc(100vw - var(--width-sidebar));
+    overflow: scroll;
 }
 
 
@@ -13,9 +14,9 @@
 }
 
 .remainPage__wrap img {
-    width: 70%;
+    width: 50%;
     height: auto;
-    margin: 32px 0px;
+    margin: 20px 0px;
     position: relative;
     top: 50%;
     left: 50%;
@@ -31,6 +32,7 @@
 .remain__list {
     padding-left: 8px !important;
     padding-right: 8px !important;
+    font-size: 13px;
 }
 
 .remain__list--item.active {

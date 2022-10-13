@@ -13,6 +13,7 @@
     padding: 24px 32px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     border-radius: 4px;
+    overflow: hidden;
 }
 
 .login__title {
@@ -25,7 +26,8 @@
     margin: -24px -32px 0;
 }
 
-.login__email,.login__password {
+.login__email,
+.login__password {
     border: none;
     outline: none;
     width: 100%;
@@ -34,7 +36,8 @@
     background-color: #e8f0fe;
 }
 
-.login__email:focus::placeholder,.login__password:focus::placeholder {
+.login__email:focus::placeholder,
+.login__password:focus::placeholder {
     background-color: var(--white-color);
     color: transparent;
 }
@@ -104,7 +107,7 @@
 // }
 
 .passwordReset__content--btn {
-   margin-top: 24px;
+    margin-top: 24px;
 }
 
 .login__notice {
@@ -121,4 +124,12 @@
     color: '#007bff' !important;
     font-size: 32 !important;
     transform: translate('-27px', '-9px') !important;
+}
+
+// screen mobile
+@media (max-width: 739px) {
+    .login {
+        width: 90vw;
+        border-radius: 3px;
+    }
 }

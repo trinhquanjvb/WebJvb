@@ -35,17 +35,21 @@ function Projects() {
    }, [])
 
    return (
-      <div className={cx('projects')}>
-         <h1>DỰ ÁN MỚI</h1>
-         <ul className={cx('project__list')}>
-            {newData.map((element, i) => (
-               <li key={i}>
-                  <h2>{element.customer}</h2>
-                  <h5>{element.name}</h5>
-                  <p>{element.creator}</p>
-               </li>
-            ))}
-         </ul>
+      <div className={cx('row')}>
+         <div className={cx('col-sm-12')}>
+            <div className={cx('projects')}>
+               <h1>DỰ ÁN MỚI</h1>
+               <ul className={cx('project__list')}>
+                  {newData.map((element, i) => (
+                     <li key={i}>
+                        <h2>{element.customer}</h2>
+                        <h5>{element.name}</h5>
+                        <p>{element.creator}</p>
+                     </li>
+                  ))}
+               </ul>
+            </div>
+         </div>
       </div>
    )
 }

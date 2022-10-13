@@ -11,7 +11,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-function Notice() {
+function Notice({ isScreenMobile }) {
    const cx = classNames.bind(styles)
 
    let [indexData, setIndexData] = useState(3)
@@ -92,17 +92,19 @@ function Notice() {
    return (
       <div className={cx('container-fuild mt-4 mb-5')}>
          <div className={cx('row')}>
-            <div className="col-lg-1">
-               {showBack && (
-                  <KeyboardArrowLeftIcon
-                     onClick={handleBack}
-                     className={cx('arrow')}
-                  />
-               )}
-            </div>
+            {isScreenMobile || (
+               <div className='col-lg-1'>
+                  {showBack && (
+                     <KeyboardArrowLeftIcon
+                        onClick={handleBack}
+                        className={cx('arrow')}
+                     />
+                  )}
+               </div>
+            )}
 
             {data.map((element, i) => (
-               <div className={cx('col-lg-5')} key={i}>
+               <div className={cx('col-lg-5', 'col-sm-12', 'px-3-sm')} key={i}>
                   <div className={cx('notice')}>
                      <div className={cx('notice__wrap')}>
                         {loading ? (
@@ -110,7 +112,7 @@ function Notice() {
                         ) : (
                            <img
                               src={defaultImg || element.image_url}
-                              alt="no image"
+                              alt='no image'
                               className={cx('notice__img')}
                               onError={handleDefaultImg}
                            />
@@ -140,15 +142,17 @@ function Notice() {
                </div>
             ))}
 
-            <div className="col-lg-1">
-               {showNext || (
-                  <KeyboardArrowRightIcon
-                     onClick={handleNext}
-                     sx={{ left: '-12px' }}
-                     className={cx('arrow')}
-                  />
-               )}
-            </div>
+            {isScreenMobile || (
+               <div className='col-lg-1'>
+                  {showNext || (
+                     <KeyboardArrowRightIcon
+                        onClick={handleNext}
+                        sx={{ left: '-12px' }}
+                        className={cx('arrow')}
+                     />
+                  )}
+               </div>
+            )}
          </div>
       </div>
    )

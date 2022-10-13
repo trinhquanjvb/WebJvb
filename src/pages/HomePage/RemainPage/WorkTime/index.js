@@ -1,5 +1,5 @@
 import RenderWorkTime from './RenderWorkTime'
-import styles from '.././RemainPage.module.scss'
+import styles from './WorkTime.module.scss'
 import { data, options, days } from './dbDate'
 import { useSelector, useDispatch } from 'react-redux'
 import actionModal from '../../../../redux/action'
