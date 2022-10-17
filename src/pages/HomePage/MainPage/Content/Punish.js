@@ -8,16 +8,16 @@ function Punish() {
 
    useLayoutEffect(() => {
       const timeId = setTimeout(() => {
+         if (money > 2015000) {
+            setMoney(2015000)
+            clearTimeout(timeId)
+         }
          setMoney((prev) => {
             return (prev += 23456)
          })
          console.log('re-render')
       }, 50)
-      if (money > 2015000) {
-         clearTimeout(timeId)
-         setMoney(2015000)
-      }
-   }, [])
+   }, [money])
 
    return (
       <div className={cx('row')}>

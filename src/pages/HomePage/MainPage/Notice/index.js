@@ -59,7 +59,6 @@ function Notice({ isScreenMobile }) {
                },
             })
             .then((res) => {
-               // setLoading(false)
                const lengthData = res.data.data.events.length
                if (lengthData >= subtract) {
                   const data = res.data.data.events[lengthData - subtract]
@@ -77,9 +76,7 @@ function Notice({ isScreenMobile }) {
       }
       fetchData()
          .catch((res) => res)
-         .finally
-         // setLoading(true)
-         ()
+         .finally()
    }, [subtract])
 
    useEffect(() => {
@@ -91,7 +88,7 @@ function Notice({ isScreenMobile }) {
    // return
    return (
       <div className={cx('container-fuild mt-4 mb-5')}>
-         <div className={cx('row')}>
+         <div className={cx('row gx-sm-0')}>
             {isScreenMobile || (
                <div className='col-lg-1'>
                   {showBack && (
@@ -148,7 +145,7 @@ function Notice({ isScreenMobile }) {
                      <KeyboardArrowRightIcon
                         onClick={handleNext}
                         sx={{ left: '-12px' }}
-                        className={cx('arrow')}
+                        className={cx('arrow', 'arrow__left')}
                      />
                   )}
                </div>

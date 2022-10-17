@@ -15,9 +15,14 @@ import { useMediaQuery } from 'react-responsive'
 const HomePage = () => {
    const cx = classNames.bind(styles)
    const isShowModal = useSelector((store) => store.reducerHomePage.isShowModal)
-   const isScreenMobile = useMediaQuery({ query: '(max-width: 668px)' })
+   const isScreenMobile = useMediaQuery({ query: '(max-width: 768px)' })
    if (isScreenMobile) {
-      return <HomePageMobile isScreenMobile={isScreenMobile} />
+      return (
+         <HomePageMobile
+            className={cx('HomePageMobile')}
+            isScreenMobile={isScreenMobile}
+         />
+      )
    } else {
       return (
          <nav className={cx('HomePage')}>

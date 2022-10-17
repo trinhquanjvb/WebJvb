@@ -22,11 +22,10 @@ import RateReviewIcon from '@mui/icons-material/RateReview'
 import ScreenShareIcon from '@mui/icons-material/ScreenShare'
 import ScreenshotMonitorIcon from '@mui/icons-material/ScreenshotMonitor'
 
-const Sidebar = () => {
+const Sidebar = ({ onClick }) => {
    const cx = classNames.bind(styles)
-
    return (
-      <div className={cx('remainPage')}>
+      <div className={cx('remainPage')} onClick={onClick}>
          <div className={cx('remainPage__wrap')}>
             <img src='https://jvb-corp.com/img/logo.png' />
          </div>
