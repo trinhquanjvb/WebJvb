@@ -88,7 +88,7 @@ function Notice({ isScreenMobile }) {
    // return
    return (
       <div className={cx('container-fuild mt-4 mb-5')}>
-         <div className={cx('row gx-sm-0')}>
+         <div className={cx('row', 'gx-2')}>
             {isScreenMobile || (
                <div className='col-lg-1'>
                   {showBack && (

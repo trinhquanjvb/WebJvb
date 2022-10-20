@@ -21,6 +21,7 @@ import RuleFolderIcon from '@mui/icons-material/RuleFolder'
 import RateReviewIcon from '@mui/icons-material/RateReview'
 import ScreenShareIcon from '@mui/icons-material/ScreenShare'
 import ScreenshotMonitorIcon from '@mui/icons-material/ScreenshotMonitor'
+import LightbulbIcon from '@mui/icons-material/Lightbulb'
 
 const Sidebar = ({ onClick }) => {
    const cx = classNames.bind(styles)
@@ -128,6 +129,15 @@ const Sidebar = ({ onClick }) => {
                            <ScreenshotMonitorIcon color='success' />
                         </ListItemIcon>
                         <ListItemText primary='Quản lý thiết bị' />
+                     </ListItemButton>
+                  </ListItem>
+                  <Divider />
+                  <ListItem disablePadding className={cx('remain__list--item')}>
+                     <ListItemButton>
+                        <ListItemIcon>
+                           <LightbulbIcon color='primary' />
+                        </ListItemIcon>
+                        <ListItemText primary='Đề xuất góp ý' />
                      </ListItemButton>
                   </ListItem>
                </List>

@@ -34,7 +34,6 @@ const RenderWorkTime = (obj) => {
    //       className={cx('calendar')}
    //    />
    // )
-   console.log(obj.selected, new Date().getMonth())
 
    // render
    return obj.index.map((data, i) => (

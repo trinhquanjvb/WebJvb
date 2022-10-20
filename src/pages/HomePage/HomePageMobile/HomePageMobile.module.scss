@@ -26,6 +26,11 @@
    position: relative;
 }
 
+.menu__icon i {
+   cursor: pointer;
+   padding: 6px;
+}
+
 .menu__divider {
    position: absolute;
    width: calc(100vw - 48px);
