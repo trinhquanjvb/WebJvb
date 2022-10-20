@@ -4,7 +4,7 @@
 
 .worktime {
    background-color: var(--white-color);
-   padding: 24px 12px 0px 0px;
+   padding: 24px 0px 0px 26px;
    position: absolute;
    top: var(--height-menu);
    right: 0;
@@ -13,11 +13,13 @@
 
 .worktime__heading {
    background-color: #e9ecef;
-   padding: 20px 16px;
-   display: flex;
-   border-radius: 4px;
-   overflow: hidden;
-   cursor: pointer;
+    padding: 20px 16px;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 48px;
+    align-items: center;
 }
 
 .worktime__heading--icon {
@@ -27,11 +29,21 @@
 
    i {
       transform: translateY(-1px);
+      margin-right: 8px;
+   }
+
+   div {
+      color: #007BFF;
+      font-weight: 300;
    }
 
    &:hover {
       color: blue;
    }
+}
+
+.worktime__heading--color {
+   font-weight: 300;
 }
 
 .worktime__select {
@@ -56,15 +68,16 @@
    border-radius: 4px;
 }
 
-.worktime__info {}
-
 .worktime__info--warn,
 .worktime__info--primary,
 .worktime__info--success {
    color: var(--white-color);
    text-transform: capitalize;
-   min-width: 150px;
-   height: var(--height-btn);
+   min-width: 150px !important;
+   height: var(--height-btn) !important;
+   cursor: pointer;
+   // width: 150px;
+   // height: 46px;
 }
 
 .worktime__info--warn {

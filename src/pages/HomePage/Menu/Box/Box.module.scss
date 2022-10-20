@@ -1,6 +1,8 @@
 // common comp Box vs com Notice
 .box {
     position: absolute;
+    right: 23px;
+    left: -16px;
     z-index: 1000;
     min-width: fit-content;
     padding: 0.5rem;
@@ -14,8 +16,6 @@
     top: 100%;
     animation: fade 0.3s ease;
     height: fit-content;
-    bottom: 0;
-    right: 0;
 }
 
 // comp Box

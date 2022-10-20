@@ -49,6 +49,40 @@ function Notice({ isScreenMobile }) {
 		)
 	}
 
+	// <<<<<<< HEAD
+	// 	useEffect(() => {
+	// 		const fetchData = async () => {
+	// 			await axios
+	// 				.get(`https://bbs-stg.hatoq.com/api/v1/events`, {
+	// 					headers: {
+	// 						'Content-Type': 'application/json;charset=utf-8',
+	// 						Authorization: 'Bearer ' + token,
+	// 					},
+	// 				})
+	// 				.then((res) => {
+	// 					// setLoading(false)
+	// 					const lengthData = res.data.data.events.length
+	// 					if (lengthData >= subtract) {
+	// 						const data = res.data.data.events[lengthData - subtract]
+	// 						setShowBack(true)
+	// 						setShowNext(false)
+	// 						if (subtract === 1) {
+	// 							setShowBack(false)
+	// 						}
+	// 						return setIndexData(data.id)
+	// 					} else {
+	// 						setShowNext(true)
+	// 						return
+	// 					}
+	// 				})
+	// 		}
+	// 		fetchData()
+	// 			.catch((res) => res)
+	// 			.finally
+	// 			// setLoading(true)
+	// 			()
+	// 	}, [subtract])
+	// =======
 	useEffect(() => {
 		const fetchData = async () => {
 			await axios
@@ -59,7 +93,6 @@ function Notice({ isScreenMobile }) {
 					},
 				})
 				.then((res) => {
-					// setLoading(false)
 					const lengthData = res.data.data.events.length
 					if (lengthData >= subtract) {
 						const data = res.data.data.events[lengthData - subtract]
@@ -77,9 +110,7 @@ function Notice({ isScreenMobile }) {
 		}
 		fetchData()
 			.catch((res) => res)
-			.finally
-			// setLoading(true)
-			()
+			.finally()
 	}, [subtract])
 
 	useEffect(() => {
@@ -88,10 +119,26 @@ function Notice({ isScreenMobile }) {
 		}, 3000)
 	}, [])
 
+	// <<<<<<< HEAD
+	// 	// return
+	// 	return (
+	// 		<div className={cx('container-fuild mt-4 mb-5')}>
+	// 			<div className={cx('row')}>
+	// 				{isScreenMobile || (
+	// 					<div className='col-lg-1'>
+	// 						{showBack && (
+	// 							<KeyboardArrowLeftIcon
+	// 								onClick={handleBack}
+	// 								className={cx('arrow')}
+	// 							/>
+	// 						)}
+	// 					</div>
+	// 				)}
+	// =======
 	// return
 	return (
 		<div className={cx('container-fuild mt-4 mb-5')}>
-			<div className={cx('row')}>
+			<div className={cx('row', 'gx-2')}>
 				{isScreenMobile || (
 					<div className='col-lg-1'>
 						{showBack && (
@@ -102,6 +149,7 @@ function Notice({ isScreenMobile }) {
 						)}
 					</div>
 				)}
+				{/* >>>>>>> 04607dbb1307f18861338a6ba8d263cfd7dab6de */}
 
 				{data.map((element, i) => (
 					<div className={cx('col-lg-5', 'col-sm-12', 'px-3-sm')} key={i}>
@@ -142,6 +190,7 @@ function Notice({ isScreenMobile }) {
 					</div>
 				))}
 
+				{/* <<<<<<< HEAD
 				{isScreenMobile || (
 					<div className='col-lg-1'>
 						{showNext || (
@@ -156,6 +205,22 @@ function Notice({ isScreenMobile }) {
 			</div>
 		</div>
 	)
+======= */}
+				{isScreenMobile || (
+					<div className='col-lg-1'>
+						{showNext || (
+							<KeyboardArrowRightIcon
+								onClick={handleNext}
+								sx={{ left: '-12px' }}
+								className={cx('arrow', 'arrow__left')}
+							/>
+						)}
+					</div>
+				)}
+			</div>
+		</div>
+	)
+	// >>>>>>> 04607dbb1307f18861338a6ba8d263cfd7dab6de
 }
 
 export default Notice

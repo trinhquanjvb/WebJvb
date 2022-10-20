@@ -9,11 +9,15 @@ function Rating() {
 			<div className={cx('col-sm-12')}>
 				<div className={cx('rating')}>
 					<h1 className={cx('rating__title')}>Góp Ý Công Ty</h1>
-					<input
+					<textarea
+						rows='5'
 						className={cx('rating__content')}
 						placeholder='rất mong nhận được ý kiến đóng góp hoặc đề xuất của bạn đến công ty'
 					/>
-					<button className={cx('btn')}>Gửi Ngay</button>
+					<span className={cx('rating__line')}></span>
+					<div className={cx('rating__btn')}>
+						<button className={cx('btn')}>Gửi Ngay</button>
+					</div>
 				</div>
 			</div>
 		</div>

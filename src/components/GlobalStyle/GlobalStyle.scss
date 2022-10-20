@@ -142,7 +142,7 @@ a {
     --primary-color: #007bff;
     --width-sidebar: 270px;
     --white-color: #ffffff;
-    --height-menu: 70px;
+    --height-menu: 73px;
 }
 
 .btn {
@@ -181,4 +181,11 @@ a {
     font-size: 16px;
     line-height: 22px;
     min-width: 100px;
+
+    &.btn:hover {
+    background-color: rgba(254, 44, 85, 1.0);
+    color: rgba(255, 255, 255, 1.0);
+
+    }
 }
+

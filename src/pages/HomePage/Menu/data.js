@@ -2,7 +2,7 @@ const dataMenu = {
    menu: [
       { url: 'gio-lam-viec', value: 'Giờ làm việc' },
       { url: 'xin-phep', value: 'Xin phép' },
-      { url: 'ngay-phep', value: 'Ngày phép' },
+      { url: 'ngay-phep', value: 'Phê duyệt nghỉ phép' },
       { url: 'quy-jvb', value: 'Quỹ JVB' },
       { url: 'bao-cao-cong-viec', value: 'Báo cáo công việc' },
    ],

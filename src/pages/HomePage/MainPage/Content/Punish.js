@@ -1,23 +1,26 @@
 import classNames from 'classnames/bind'
 import styles from './Content.module.scss'
-import { useState, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect, useRef } from 'react'
 
 function Punish() {
 	const cx = classNames.bind(styles)
 	const [money, setMoney] = useState(0)
+	const timeId = useRef()
 
 	useLayoutEffect(() => {
-		const timeId = setTimeout(() => {
+		timeId.current = setInterval(() => {
 			setMoney((prev) => {
 				return (prev += 23456)
 			})
-			console.log('re-render')
 		}, 50)
+	}, [])
+
+	useLayoutEffect(() => {
 		if (money > 2015000) {
-			clearTimeout(timeId)
+			clearInterval(timeId.current)
 			setMoney(2015000)
 		}
-	}, [])
+	}, [money])
 
 	return (
 		<div className={cx('row')}>

@@ -1,10 +1,15 @@
+.homePageMobile {
+   padding-left: 14px;
+   overflow: hidden;
+   padding-right: 14px;
+}
+
 .menu {
    position: fixed;
    top: 0;
    right: 0;
    left: 0;
    z-index: 1000000;
-   height: 2000px;
 }
 
 .menu__icon {
@@ -17,11 +22,35 @@
    font-size: 14px;
    width: 100%;
    padding: 24px;
+   z-index: 1000000;
+   position: relative;
+}
+
+.menu__icon i {
+   cursor: pointer;
+   padding: 6px;
+}
+
+.menu__divider {
+   position: absolute;
+   width: calc(100vw - 48px);
+   margin-left: 14px;
+   background: #666;
+   margin-right: 14px;
+   transform: translateY(var(--heigh-menu / 2));
+   margin-right: 14px !important;
+   transform: translateY(calc(var(--height-menu) /2))
+}
+
+.menu__icon div i {
+   font-size: 24px;
 }
 
 .menu__list {
    background-color: #97bfe4;
    padding-left: 28px;
+   animation: slide ease 0.5s;
+   z-index: 100000;
 }
 
 .menu__list a {
@@ -29,4 +58,27 @@
    color: var(--white-color);
    display: block;
    padding: 6px 0;
+}
+
+.modal {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   background-color: rgba($color: #000000, $alpha: 0.5);
+   z-index: 10000000;
+}
+
+
+@keyframes slide {
+   from {
+      transform: translateY(-100%);
+      opacity: 0;
+   }
+
+   to {
+      transform: translateY(0);
+      opacity: 1;
+   }
 }

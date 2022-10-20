@@ -21,12 +21,12 @@ import RuleFolderIcon from '@mui/icons-material/RuleFolder'
 import RateReviewIcon from '@mui/icons-material/RateReview'
 import ScreenShareIcon from '@mui/icons-material/ScreenShare'
 import ScreenshotMonitorIcon from '@mui/icons-material/ScreenshotMonitor'
+import LightbulbIcon from '@mui/icons-material/Lightbulb'
 
-const Sidebar = () => {
+const Sidebar = ({ onClick }) => {
    const cx = classNames.bind(styles)
-
    return (
-      <div className={cx('remainPage')}>
+      <div className={cx('remainPage')} onClick={onClick}>
          <div className={cx('remainPage__wrap')}>
             <img src='https://jvb-corp.com/img/logo.png' />
          </div>
@@ -129,6 +129,15 @@ const Sidebar = () => {
                            <ScreenshotMonitorIcon color='success' />
                         </ListItemIcon>
                         <ListItemText primary='Quản lý thiết bị' />
+                     </ListItemButton>
+                  </ListItem>
+                  <Divider />
+                  <ListItem disablePadding className={cx('remain__list--item')}>
+                     <ListItemButton>
+                        <ListItemIcon>
+                           <LightbulbIcon color='primary' />
+                        </ListItemIcon>
+                        <ListItemText primary='Đề xuất góp ý' />
                      </ListItemButton>
                   </ListItem>
                </List>
