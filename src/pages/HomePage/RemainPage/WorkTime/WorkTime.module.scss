@@ -13,13 +13,13 @@
 
 .worktime__heading {
    background-color: #e9ecef;
-    padding: 20px 16px;
-    display: flex;
-    border-radius: 4px;
-    overflow: hidden;
-    cursor: pointer;
-    height: 48px;
-    align-items: center;
+   padding: 20px 16px;
+   display: flex;
+   border-radius: 4px;
+   overflow: hidden;
+   cursor: pointer;
+   height: 48px;
+   align-items: center;
 }
 
 .worktime__heading--icon {
@@ -76,8 +76,6 @@
    min-width: 150px !important;
    height: var(--height-btn) !important;
    cursor: pointer;
-   // width: 150px;
-   // height: 46px;
 }
 
 .worktime__info--warn {
@@ -111,7 +109,6 @@
    font-size: 24px;
    font-weight: bolder;
    flex: 0 0 14%;
-   // max-width: 14%;
    background-color: #eeeeee;
    text-align: center;
    padding: 40px 0;
@@ -155,8 +152,6 @@
 
 .sdp {
    --theme-color: #8b5cf6 !important;
-   /* violet color */
    --selected-date-color: #eeeeee !important;
-   /* light-gray color */
    --font: 'Kollektif', sans-serif !important;
 }

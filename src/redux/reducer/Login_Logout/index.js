@@ -1,4 +1,3 @@
-// import initialState from '../../innitialState'
 const initialState = {
    isShowModal: false,
 }

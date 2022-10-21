@@ -9,10 +9,12 @@ const Logout = ({ onClick }) => {
    const cx = classNames.bind(styles)
    return (
       <div className={cx('box')} onClick={onClick}>
-         <div className={cx('box__content')}>Thiết lập cá nhân</div>
+         <Link to='/thiet-lap-ca-nhan' className={cx('box__content')}>
+            Thiết lập cá nhân
+         </Link>
          <div className={cx('box__content', 'mb-3')}>Đổi mật khẩu</div>
          <Divider />
-         <Link to='/login ' className={cx('box__content', 'mt-2', 'mb-2')}>
+         <Link to='/login' className={cx('box__content', 'mt-2', 'mb-2')}>
             Đăng xuất
          </Link>
       </div>

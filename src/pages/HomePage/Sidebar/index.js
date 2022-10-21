@@ -1,6 +1,9 @@
+import styles from './Sidebar.module.scss'
+
 import classNames from 'classnames/bind'
 import { Link, useNavigate } from 'react-router-dom'
-import styles from './Sidebar.module.scss'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 // material
 import React from 'react'
@@ -25,12 +28,34 @@ import LightbulbIcon from '@mui/icons-material/Lightbulb'
 
 const Sidebar = ({ onClick }) => {
    const cx = classNames.bind(styles)
+   const [data, setData] = useState('')
+   const newToken = localStorage.getItem('token')
+   const token = JSON.parse(newToken)
+   const urlPersonal = `https://bbs-stg.hatoq.com/api/v1/user`
+   useEffect(() => {
+      const fetchData = async () => {
+         await axios
+            .get(urlPersonal, {
+               headers: {
+                  'Content-Type': 'application/json;charset=utf-8',
+                  Authorization: 'Bearer ' + token,
+               },
+            })
+            .then((res) => setData(res.data.data.team))
+      }
+      fetchData().catch((res) => res)
+   }, [])
+   console.log(data)
    return (
       <div className={cx('remainPage')} onClick={onClick}>
          <div className={cx('remainPage__wrap')}>
-            <img src='https://jvb-corp.com/img/logo.png' />
+            <img
+               // src='https://jvb-corp.com/img/logo.png'
+               src={data.banner}
+               alt='khum co'
+            />
          </div>
-         <h3 className={cx('remain__title')}>THỰC TẬP SINH</h3>
+         <h3 className={cx('remain__title')}>{data?.name}</h3>
 
          <Box
             sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}

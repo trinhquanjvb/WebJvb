@@ -23,7 +23,6 @@ function Modal() {
       setSelected(id)
    }
 
-   // render
    return (
       <div className={cx('modal')} onClick={handleModal}>
          <div className={cx('modal_container')} onClick={handleModalContainer}>
