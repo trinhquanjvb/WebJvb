@@ -1,10 +1,12 @@
 import RenderWorkTime from './RenderWorkTime'
 import styles from './WorkTime.module.scss'
-import { data, options, days } from './dbDate'
+import { data1 as data } from '../../../../container/data'
+import { options1 as options } from '../../../../container/options'
+import { days1 as days } from '../../../../container/days'
 import { useSelector, useDispatch } from 'react-redux'
 import actionModal from '../../../../redux/action'
 
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import classNames from 'classnames/bind'
 
 const WorkTime = () => {

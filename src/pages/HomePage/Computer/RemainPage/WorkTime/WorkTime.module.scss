@@ -1,0 +1,157 @@
+:root {
+    --height-btn: 46px;
+ }
+ 
+ .worktime {
+    background-color: var(--white-color);
+    padding: 24px 0px 0px 26px;
+    position: absolute;
+    top: var(--height-menu);
+    right: 0;
+    left: var(--width-sidebar);
+ }
+ 
+ .worktime__heading {
+    background-color: #e9ecef;
+    padding: 20px 16px;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 48px;
+    align-items: center;
+ }
+ 
+ .worktime__heading--icon {
+    color: var(--primary-color);
+    display: flex;
+    margin-right: 4px;
+ 
+    i {
+       transform: translateY(-1px);
+       margin-right: 8px;
+    }
+ 
+    div {
+       color: #007BFF;
+       font-weight: 300;
+    }
+ 
+    &:hover {
+       color: blue;
+    }
+ }
+ 
+ .worktime__heading--color {
+    font-weight: 300;
+ }
+ 
+ .worktime__select {
+    margin-top: 52px;
+    margin-bottom: 32px;
+ }
+ 
+ .worktime__select--year {
+    padding: 10px 0px 10px 10px;
+    margin-right: 28px;
+ }
+ 
+ .worktime__select--month {
+    padding: 10px 12px 10px 10px;
+ }
+ 
+ .worktime__select--year,
+ .worktime__select--month {
+    width: 156px;
+    height: var(--height-btn);
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+ }
+ 
+ .worktime__info--warn,
+ .worktime__info--primary,
+ .worktime__info--success {
+    color: var(--white-color);
+    text-transform: capitalize;
+    min-width: 150px !important;
+    height: var(--height-btn) !important;
+    cursor: pointer;
+ }
+ 
+ .worktime__info--warn {
+    background-color: #ff3547;
+ }
+ 
+ .worktime__info--primary {
+    background-color: #4285f4;
+    margin-left: 24px;
+ }
+ 
+ .worktime__info--success {
+    background-color: #00c851;
+    margin-left: 24px;
+ }
+ 
+ .worktime__calender {
+    width: 100%;
+    margin-top: 32px;
+ }
+ 
+ .worktime__calender--day {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+ 
+ .worktime__calender--day .day,
+ .worktime__calender--day .date {
+    font-size: 24px;
+    font-weight: bolder;
+    flex: 0 0 14%;
+    background-color: #eeeeee;
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 4px;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    outline: none;
+ }
+ 
+ .worktime__calender--day .day {
+    padding: 15px 0px;
+    font-size: 14px;
+    font-weight: normal;
+ }
+ 
+ .day.active,
+ .date.active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+ }
+ 
+ .worktime__calender--day .date.disable {
+    background-color: #f7f4f4;
+    opacity: 0.5;
+    pointer-events: none;
+ }
+ 
+ .worktime__calender--day .date.rest {
+    color: red;
+ }
+ 
+ .day+.day,
+ .date+.date {}
+ 
+ .calendar {
+    background-color: #ccc;
+    border: none;
+    height: 700px;
+ }
+ 
+ .sdp {
+    --theme-color: #8b5cf6 !important;
+    --selected-date-color: #eeeeee !important;
+    --font: 'Kollektif', sans-serif !important;
+ }
