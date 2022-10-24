@@ -1,0 +1,43 @@
+:root {
+   --right-margin: 24px;
+}
+
+.wrap__input {
+   width: 100%;
+   height: 50px;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   flex: 3;
+}
+
+.input {
+   width: 100%;
+   border: none;
+   outline: none;
+   border-bottom: 1px solid #ccc;
+   background-color: #f6f6f6;
+   height: 100%;
+
+   &:focus {
+      border-bottom-color: blue;
+      border-bottom-width: 2px;
+   }
+}
+
+.wrap__input i {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   right: var(--right-margin);
+   font-size: 20px;
+   color: black;
+
+   +i {
+      margin-right: calc(var(--right-margin) + 16px);
+      color: red;
+
+   }
+}
+
+// .wrap__input i+i {}

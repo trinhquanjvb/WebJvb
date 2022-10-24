@@ -1,8 +1,8 @@
 import styles from './HomePageMobile.module.scss'
-import dataMenu from '../Menu/data'
+import dataMenu from '../../../container/dataMenu'
 import Notice from '../MainPage/Notice'
 import Content from '../MainPage/Content'
-import Sidebar from '../../HomePage/Sidebar'
+import Sidebar from '../../HomePage/Computer/SideBar'
 import { Divider } from '@mui/material'
 
 import classNames from 'classnames/bind'
