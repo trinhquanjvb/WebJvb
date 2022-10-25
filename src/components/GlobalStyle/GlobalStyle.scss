@@ -146,46 +146,52 @@ a {
 }
 
 .btn {
-    border-radius: 4px;
+    border-radius: 2px;
     border: none;
     color: rgba(255, 255, 255, 1.0);
     background-color: rgba(254, 44, 85, 1.0);
-    min-width: 164px;
+    min-width: 120px;
     min-height: 36px;
     font-size: 16px;
     line-height: 25px;
     font-weight: 600;
     font-family: SofiaPro, PingFangSC, sans-serif;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    
     display: flex;
     position: relative;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+    
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
+    
     justify-content: center;
     padding: 6px 8px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    height: 40px;
     cursor: pointer;
     box-sizing: border-box;
-    font-family: "IBM Plex Sans", ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 22px;
-    min-width: 100px;
 
-    &.btn:hover {
-    background-color: rgba(254, 44, 85, 1.0);
-    color: rgba(255, 255, 255, 1.0);
+    // &.btn:hover {
+    // background-color: rgba(254, 44, 85, 1.0);
+    // color: rgba(255, 255, 255, 1.0);
 
-    }
+    // }
+}
+.btn + .btn {
+        margin-left: 20px;
+}
+.btn.green {
+    background-color: #2bbbad;
+    height: 40px;
 }
 
+.btn.blue {
+    background-color: #4285f4;
+    height: 40px;
+}
+.btn.grey {
+    background-color: #59698d;
+}
+.btn.rounded {
+    border-radius: 999;
+}

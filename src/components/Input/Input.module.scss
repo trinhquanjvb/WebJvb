@@ -19,6 +19,9 @@
    background-color: #f6f6f6;
    height: 100%;
 
+}
+
+.input.focus {
    &:focus {
       border-bottom-color: blue;
       border-bottom-width: 2px;

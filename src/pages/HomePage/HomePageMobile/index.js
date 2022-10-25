@@ -1,7 +1,7 @@
 import styles from './HomePageMobile.module.scss'
 import dataMenu from '../../../container/dataMenu'
-import Notice from '../MainPage/Notice'
-import Content from '../MainPage/Content'
+import Notice from '../Computer/MainPage/Notice'
+import Content from '../Computer/MainPage/Content'
 import Sidebar from '../../HomePage/Computer/SideBar'
 import { Divider } from '@mui/material'
 

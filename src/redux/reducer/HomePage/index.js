@@ -1,5 +1,6 @@
 const initialState = {
    isShowModal: false,
+   isShowIcon: false,
 }
 
 const reducerHomePage = (state = initialState, action) => {
@@ -8,6 +9,11 @@ const reducerHomePage = (state = initialState, action) => {
          return {
             ...state,
             isShowModal: action.payload,
+         }
+      case 'ACTION__ICON':
+         return {
+            ...state,
+            isShowIcon: action.payload,
          }
       default:
          return state

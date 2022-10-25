@@ -1,27 +1,41 @@
 import styles from './Input.module.scss'
 
+import { useSelector } from 'react-redux'
 import classNames from 'classnames/bind'
 
 function Input({
-   placehoder,
    title,
-   readonly,
+   placehoder,
+   readonly = false,
+   input,
    onChange,
    pencil,
    important,
+   Tag = 'div',
    ...passProps
 }) {
    const cx = classNames.bind(styles)
+   const isShowIcon = useSelector((store) => store.reducerHomePage.isShowIcon)
    const props = {
       onChange,
       ...passProps,
    }
+   
 
    return (
       <div className={cx('wrap__input')}>
-         <input className={cx('input')} {...props} />
-         {pencil && <i className={pencil}></i>}
-         {important && <i className={important}></i>}
+         <Tag
+            className={cx('input', {
+               focus: isShowIcon,
+            })}
+            {...props}
+         />
+         {isShowIcon && (
+            <>
+               <i className={pencil}></i>
+               <i className={important}></i>
+            </>
+         )}
       </div>
    )
 }

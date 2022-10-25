@@ -21,6 +21,7 @@
 
 .setting__option--btn {
    margin-top: 16px;
+   display: inline-flex;
 }
 
 .setting__record {
@@ -69,11 +70,29 @@
    flex: 1;
    justify-content: end;
    display: flex;
+   flex-direction: column;
+   position: relative;
 }
 
-.fullName__avata i {
+.fullName__avata--img {
+   display: flex;
+   justify-content: end;
+   position: absolute;
+   right: 0;
+   top: 0;
+}
+
+.fullName__avata--img i {
    font-size: 256px;
    color: #ccc;
+}
+
+.fullName__avata--btn {
+   display: flex;
+   justify-content: end;
+}
+.mr {
+   margin-right: 60px;
 }
 
 .setting__record--address {
