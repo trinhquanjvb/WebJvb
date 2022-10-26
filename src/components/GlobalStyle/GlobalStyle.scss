@@ -151,17 +151,18 @@ a {
     color: rgba(255, 255, 255, 1.0);
     background-color: rgba(254, 44, 85, 1.0);
     min-width: 120px;
+    max-width: 120px;
     min-height: 36px;
     font-size: 16px;
     line-height: 25px;
     font-weight: 600;
     font-family: SofiaPro, PingFangSC, sans-serif;
-    
+
     display: flex;
     position: relative;
-    
+
     align-items: center;
-    
+
     justify-content: center;
     padding: 6px 8px;
     height: 40px;
@@ -177,9 +178,11 @@ a {
 
     // }
 }
-.btn + .btn {
-        margin-left: 20px;
+
+.btn+.btn {
+    margin-left: 20px;
 }
+
 .btn.green {
     background-color: #2bbbad;
     height: 40px;
@@ -189,9 +192,11 @@ a {
     background-color: #4285f4;
     height: 40px;
 }
+
 .btn.grey {
     background-color: #59698d;
 }
+
 .btn.rounded {
     border-radius: 999;
 }
