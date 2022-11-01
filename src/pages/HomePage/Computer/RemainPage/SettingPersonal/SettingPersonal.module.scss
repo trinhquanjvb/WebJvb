@@ -1,45 +1,44 @@
 .settingPersonal {
-    background-color: var(--white-color);
-    padding: 24px 16px 0px 26px;
-    position: absolute;
-    top: var(--height-menu);
-    right: -32px;
-    left: var(--width-sidebar);
-    overflow: scroll;
-    height: 1000px;
- }
- 
- .settingPersonal__heading {
-    background-color: #e9ecef;
-    padding: 20px 16px;
-    display: flex;
-    border-radius: 4px;
-    overflow: hidden;
-    cursor: pointer;
-    height: 48px;
-    align-items: center;
- }
- 
- .settingPersonal__heading--icon {
-    color: var(--primary-color);
-    display: flex;
-    margin-right: 4px;
- 
-    i {
-       transform: translateY(-1px);
-       margin-right: 8px;
-    }
- 
-    div {
-       color: #007BFF;
-       font-weight: 300;
-    }
- 
-    &:hover {
-       color: blue;
-    }
- }
- 
- .settingPersonal__heading--color {
-    font-weight: 300;
- }
+   background-color: var(--white-color);
+   padding: 24px 16px 0px 26px;
+   position: absolute;
+   top: var(--height-menu);
+   right: -12px;
+   left: var(--width-sidebar);
+   // overflow: scroll;
+}
+
+.settingPersonal__heading {
+   background-color: #e9ecef;
+   padding: 20px 16px;
+   display: flex;
+   border-radius: 4px;
+   overflow: hidden;
+   cursor: pointer;
+   height: 48px;
+   align-items: center;
+}
+
+.settingPersonal__heading--icon {
+   color: var(--primary-color);
+   display: flex;
+   margin-right: 4px;
+
+   i {
+      transform: translateY(-1px);
+      margin-right: 8px;
+   }
+
+   div {
+      color: #007BFF;
+      font-weight: 300;
+   }
+
+   &:hover {
+      color: blue;
+   }
+}
+
+.settingPersonal__heading--color {
+   font-weight: 300;
+}

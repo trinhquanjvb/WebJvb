@@ -1,0 +1,26 @@
+.setting__option {
+   display: flex;
+   padding: 0px 6px 12px;
+   justify-content: space-between;
+}
+
+.setting__option--heading {
+   padding-left: 10px;
+}
+
+.setting__option--heading.transparent {
+   color: transparent;
+}
+
+.heading__personal--title {
+   font-size: 24px;
+   margin-top: 32px;
+   margin-bottom: 20px;
+   font-weight: bold;
+}
+
+
+.setting__option--btn {
+   margin-top: 16px;
+   display: inline-flex;
+}
