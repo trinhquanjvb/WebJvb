@@ -127,7 +127,7 @@ function LoginLogout() {
                <input
                   className={cx('login__email')}
                   onChange={handleEmail}
-                  placeholder='E-email'
+                  placeholder='trinhnv@jvb-corp.com'
                   value={email}
                   ref={refEmail}
                />
@@ -138,7 +138,7 @@ function LoginLogout() {
                <input
                   className={cx('login__password')}
                   onChange={handlePassword}
-                  placeholder='Mật khẩu'
+                  placeholder='12345678'
                   value={password}
                   type='password'
                />
