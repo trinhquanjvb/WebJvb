@@ -1,3 +1,7 @@
+:root {
+   --height-: 38px;
+}
+
 .dateOffWork,
 .pleaseOffWork,
 .punish,
@@ -10,7 +14,8 @@
    left: var(--width-sidebar);
 }
 
-.pleaseOffWork__heading {
+.pleaseOffWork__heading,
+.dateOffWork__heading {
    background-color: #e9ecef;
    padding: 20px 16px;
    display: flex;
@@ -21,7 +26,8 @@
    align-items: center;
 }
 
-.pleaseOffWork__heading--icon {
+.pleaseOffWork__heading--icon,
+.dateOffWork__heading--icon {
    color: var(--primary-color);
    display: flex;
    margin-right: 4px;
@@ -32,7 +38,7 @@
    }
 
    div {
-      color: #007BFF;
+      color: #007bff;
       font-weight: 300;
    }
 
@@ -41,9 +47,11 @@
    }
 }
 
-.pleaseOffWork__heading--color {
+.pleaseOffWork__heading--color,
+.dateOffWork__heading--color {
    font-weight: 300;
 }
+// please of Work
 
 .pleaseOffWork__content--title {
    font-size: 32px;
@@ -125,7 +133,6 @@
       margin-right: 10px;
       display: flex;
       align-items: center;
-
    }
 
    input {
@@ -155,4 +162,136 @@
 
 .pleaseOffWork__none {
    margin-top: 32px;
+}
+
+// date off work
+.dateOffWork__date {
+   display: flex;
+   align-items: center;
+   margin-top: 16px;
+}
+
+.dateOffWork__date--label {
+   margin-right: 8px;
+   ~ .dateOffWork__date--label {
+      margin-left: 12px;
+   }
+}
+
+.dateOffWork__date--input {
+   height: var(--height-);
+   background-color: #e9ecef;
+   border-radius: 4px;
+   border: none;
+   outline: none;
+   padding: 0px 16px 0px 20px;
+}
+
+.dateOffWork__date--btn {
+   height: var(--height-);
+   width: 85px;
+   background-color: #c494db;
+   color: var(--white-color);
+   text-align: center;
+   margin-left: 8px;
+   border: none;
+   outline: none;
+   border-radius: 4px;
+   font-size: 20px;
+   cursor: pointer;
+}
+
+.dateOffWork__infor {
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 24px;
+}
+.dateOffWork__infor--wrap {
+   display: flex;
+   flex: 21%;
+   max-width: 21%;
+   height: 100px;
+   border-radius: 10px;
+   padding: 12px;
+   align-items: center;
+   cursor: pointer;
+}
+
+.dateOffWork__infor--wrap.blue {
+   background-color: #4285f4;
+   .dateOffWork__infor--calendar {
+      background-color: inherit;
+      color: inherit;
+   }
+}
+.dateOffWork__infor--wrap.green {
+   background-color: #00c851;
+   .dateOffWork__infor--calendar {
+      background-color: inherit;
+      color: inherit;
+   }
+}
+.dateOffWork__infor--wrap.yellow {
+   background-color: #ffbb33;
+   .dateOffWork__infor--calendar {
+      background-color: inherit;
+      color: inherit;
+   }
+}
+.dateOffWork__infor--wrap.red {
+   background-color: #ff3547;
+   .dateOffWork__infor--calendar {
+      background-color: inherit;
+      color: inherit;
+   }
+}
+.dateOffWork__infor--calendar {
+   font-size: 30px;
+   border-radius: 999px;
+   padding: 6px;
+   // background-color: rgb(202, 189, 189);
+   margin-right: 20px;
+}
+.dateOffWork__infor--content {
+}
+.content__heading {
+   font-size: 30px;
+   color: var(--white-color);
+   font-weight: bold;
+}
+.content__title {
+   font-size: 12px;
+   color: #ffffff80;
+}
+
+.content__title.transparent {
+   color: transparent;
+}
+.content__time {
+   color: var(--white-color);
+   font-size: 12px;
+   font-weight: bold;
+   margin-top: 4px;
+   text-transform: uppercase;
+}
+
+.dateOffWork__select {
+   display: flex;
+   justify-content: end;
+   height: 40px;
+   margin: 20px 0px;
+   select {
+      width: 200px;
+      border-color: #cccccc;
+   }
+}
+
+.dateOffWork__content {
+   background-color: #e0e0e0;
+   display: flex;
+   justify-content: space-around;
+   li {
+      padding: 20px 0px;
+      font-size: 14px;
+   }
 }
